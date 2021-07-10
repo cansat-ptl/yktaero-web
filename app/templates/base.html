@@ -1,43 +1,65 @@
 <!DOCTYPE html>
 <html lang="ru">
-        <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <link rel="stylesheet" href="{{ url_for('static', filename='./css/base.css') }}">
-                <link rel="stylesheet" href="{{ url_for('static', filename='./css/icons.css') }}">
-                <title>{% block title %}{% endblock %}</title>
-        </head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='./css/base.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='./css/icons.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='./css/normalize.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='./css/sanitize.css') }}">
+        <title>{% block title %}{% endblock %}</title>
+        <style>
+            .background-image {
+                background-image: url("{{ url_for('static', filename='./img/bkg.jpg') }}");
+            }
+        </style>
+    </head>
 
-        <body>
-                <div class="header">
-                        <div class="main-align-center">
-                                <h1>Will it work?</h1>
-                                <p>I have no idea.</p>
-                        </div>
+    <body>
+        <div class="navbar">
+            <div class="main-align-center">
+                <button class="navbar-logo-btn">
+                    <img src="{{ url_for('static', filename='./img/logo.svg') }}" class="navbar-logo-img">
+                </button>
+                <a href="#home">Home</a>
+                <a href="#news">News</a>
+                <div class="navbar-dropdown">
+                    <button class="navbar-dropdown-btn">
+                        Dropdown 
+                        <i class="icons-arrow icons-arrow-down"></i>
+                    </button>
+                    <div class="navbar-dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
                 </div>
-                <div class="navbar">
-                        <div class="main-align-center">
-                                <a href="#home">Home</a>
-                                <a href="#news">News</a>
-                                <div class="navbar-dropdown">
-                                        <button class="navbar-dropdown-btn">
-                                                Dropdown 
-                                                <i class="icons-arrow icons-arrow-down"></i>
-                                                <i class="fa fa-caret-down"></i>
-                                        </button>
-                                        <div class="navbar-dropdown-content">
-                                                <a href="#">Link 1</a>
-                                                <a href="#">Link 2</a>
-                                                <a href="#">Link 3</a>
-                                        </div>
-                                </div>
-                        </div>
-                </div>
-                <div class="main-container">     
-                        <div class="main-content-flex">
-                                <div class="main-content-side">...</div>
-                                <div class="main-content-center">...</div>
-                        </div>
-                </div> 
-        </body>
+            </div>
+        </div>
+        <div class="header background-image">
+            <div class="main-align-center background-text">
+                <h1>Сюда картинку въебать пиздатую</h1>
+                <p>Только хз как</p>
+            </div>
+            <div class="backgroundg-image"></div>
+        </div>
+        <div class="main-container">     
+            <div class="main-content-flex">
+                <div class="main-content-side"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a pellentesque diam. Pellentesque vel tempor massa, quis rhoncus nisi. Suspendisse potenti. Nam posuere dui id facilisis vulputate. Vestibulum libero lacus, dignissim a scelerisque ac, porta vitae leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis dapibus elit pretium, vestibulum augue non, feugiat est. Sed porta eu risus sit amet laoreet. Fusce rutrum imperdiet tortor cursus efficitur. In pulvinar iaculis tortor, sed scelerisque augue consequat non. Donec quis purus lacus. Ut iaculis ipsum dui. Sed sed laoreet erat.</p></div>
+                <div class="main-content-center"> 
+                    <p>
+                    Phasellus iaculis velit orci, semper aliquet erat facilisis quis. Vestibulum lacinia, libero vel ultrices auctor, nisi ligula pretium elit, sit amet mattis orci augue sagittis velit. Quisque congue fringilla fringilla. Nulla facilisi. Fusce ornare et odio id eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed tincidunt, diam id fermentum tempor, mi ex condimentum enim, sed pellentesque nisl dui vitae dolor. Aliquam nisi mauris, rhoncus vel mi ac, pellentesque feugiat velit. Fusce sed vestibulum neque, sit amet imperdiet urna. Mauris id luctus velit, sit amet malesuada enim. Integer vehicula iaculis turpis, in posuere nibh venenatis quis. Ut sed erat id lacus sagittis sollicitudin.
+                    </p>
+                    <p>
+                    Phasellus enim neque, commodo ut posuere a, egestas id mi. Integer consequat ante sed fringilla rhoncus. Proin volutpat accumsan aliquet. Donec at lacus nibh. Vestibulum luctus tristique turpis ac consectetur. Donec pretium ante quis imperdiet condimentum. Mauris malesuada ipsum tortor, sit amet scelerisque nisi eleifend vitae. Sed at erat cursus, eleifend massa non, vestibulum mauris.</p>
+                    <p>
+                    Donec sed ultricies justo, a tempor quam. Cras sollicitudin ac metus at fringilla. Quisque turpis velit, consectetur eu condimentum nec, porttitor a neque. Duis sed turpis non sapien gravida fermentum id vitae lacus. Sed eget sodales mauris, sit amet imperdiet est. Nulla pulvinar lorem in iaculis gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam magna est, tincidunt ac sapien a, imperdiet congue nibh. Donec lacinia tortor lacinia dui finibus, eu sagittis ipsum ultrices. Aenean a mi quis nunc congue tristique. In pulvinar nibh nisl, at fermentum arcu ultricies sed. Fusce venenatis eros ac accumsan vehicula. Nam nec magna vitae risus tincidunt pretium. Praesent tristique posuere leo, a porta urna tristique ac. Pellentesque felis leo, facilisis ut nibh ac, vestibulum aliquam mauris.</p>
+                    <p>
+                    Sed porttitor in ex vel volutpat. Nulla facilisi. Pellentesque id tincidunt lorem. Quisque aliquet turpis in lorem consequat, sit amet elementum diam semper. Praesent fringilla ante nunc, id gravida lacus vestibulum eget. In felis justo, mattis nec justo tincidunt, sollicitudin placerat sapien. Morbi vestibulum eleifend justo at euismod. Cras ullamcorper, sapien non hendrerit rhoncus, nibh lectus mattis tellus, eu vestibulum mauris quam vel enim. Donec fringilla sem sed efficitur consequat. Ut justo quam, placerat a facilisis nec, laoreet in arcu. Donec interdum ipsum sapien, quis lobortis est congue id. Nunc interdum diam vitae blandit sagittis.</p> </div>
+            </div>
+        </div> 
+        <div class="footer">
+            <h2>Footer</h2>
+        </div> 
+    </body>
 </html>

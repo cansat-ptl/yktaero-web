@@ -5,6 +5,11 @@
         --color-gray-1: #2F4550;
         --color-gray-2: #586F7C;
         --color-gray-3: #F3F5F7;
+
+        --navbar-btn-margin: 40px;
+        
+        font-size: 16px;
+        font-family: Arial, sans-serif;
 }
 
 /* ================================================ *
@@ -15,9 +20,32 @@
         box-sizing: border-box;
 }
 
+.background-text {
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.6);
+        color: white;
+        font-weight: bold;
+        border: 3px solid var(--color-gray-3);
+        z-index: 2;
+        width: 80%;
+        padding: 20px;
+        text-align: center;
+}
+
+.background-image {
+        height: 100%;
+    
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+}
+
 body {
-        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
         margin: 0px;
+        font-family: Arial, sans-serif;
 }
 
 .main-align-center {
@@ -29,6 +57,7 @@ body {
         max-width: 75%;
         margin: auto;
         margin-top: 10px;
+        margin-bottom: 10px;
 }
 
 .main-content-flex {
@@ -60,6 +89,34 @@ body {
         .navbar a {
                 float: none;
                 width: 100%;
+                margin: 0 !important;
+        }
+
+        .navbar-dropdown {
+                float: none;
+                width: 100%;
+                margin: 0 !important;
+        }
+
+        .navbar-dropdown .navbar-dropdown-btn {
+                width: 100%;
+        }
+
+        .navbar-dropdown-content {
+                width: 75%;
+        }
+
+        .navbar-dropdown-content a {
+                display: inline-block;
+                text-align: center !important;
+        }
+
+        .header {
+                padding: 20px !important;
+        }
+
+        .header h1 {
+                font-size: 20px !important;
         }
 }
 
@@ -68,7 +125,9 @@ body {
  * ================================================ */
 
 .header {
-        padding: 160px;
+        padding: 80px;
+        padding-top: 160px;
+        padding-bottom: 160px;
         text-align: center;
         background: var(--color-blue-1);
         color: white;
@@ -78,32 +137,45 @@ body {
         font-size: 40px;
 }
 
+.footer {
+        margin-top: auto; 
+        padding: 20px;
+        text-align: center;
+        background: var(--color-gray-3);
+}
+
 /* ================================================ *
  *                  Navbar styles                   * 
  * ================================================ */
 
 .navbar {
         overflow: hidden;
-        background-color: var(--color-black-1);
+        background-color: black;
         font-family: inherit;
 }
 
 .navbar a {
+        margin-top: var(--navbar-btn-margin);
+        position: relative;
+        bottom: 0px;
         float: right;
         font-size: 16px;
         color: white;
         text-align: center;
         padding: 20px 24px;
         text-decoration: none;
+        line-height: 1.0;
 }
 
 .navbar-dropdown {
+        margin-top: var(--navbar-btn-margin);
         float: right;
         overflow: hidden;
 }
 
 .navbar-dropdown .navbar-dropdown-btn {
         font-size: 16px;
+        text-align: center;
         border: none;
         outline: none;
         color: white;
@@ -111,6 +183,27 @@ body {
         background-color: inherit;
         font-family: inherit;
         margin: 0;
+        line-height: 1.0;
+}
+
+.navbar-logo-btn {
+        float: left;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 10px 12px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        line-height: 1.0;
+}
+
+.navbar-logo-img {
+        width: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        max-height: 80px;
+        max-width: 100%;
 }
 
 .navbar a:hover, .navbar-dropdown:hover .navbar-dropdown-btn {
@@ -127,6 +220,7 @@ body {
 }
       
 .navbar-dropdown-content a {
+        margin-top: 0;
         float: none;
         color: black;
         padding: 12px 16px;
