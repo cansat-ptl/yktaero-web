@@ -1,10 +1,13 @@
 :root {
         --color-blue-1: #457AAB;
-        --color-blue-2: #D0E1EF;
+        --color-blue-2: #285580;
+        --color-blue-3: #D0E1EF;
+        --color-blue-4: #5F90BF;
         --color-black-1: #222222;
-        --color-gray-1: #2F4550;
-        --color-gray-2: #586F7C;
-        --color-gray-3: #F3F5F7;
+        --color-gray-1: #48555c;
+        --color-gray-2: #9b9b9b;
+        --color-gray-3: #f5f5f5;
+        --color-gray-4: #a8a8a8;
 
         --navbar-btn-margin: 44px;
         
@@ -13,31 +16,87 @@
 }
 
 /* ================================================ *
+ *                  Responsiveness                  * 
+ * ================================================ */
+/* Some dark magic I found on w3schools, idk how this shit works */
+@media screen and (max-width: 1080px) {
+        :root {
+                --navbar-btn-margin: 28px;
+        }
+        .main-content-flex {
+                flex-direction: column;
+        }
+
+        .main-align-center {
+                max-width: 90%;
+        }
+        
+        .main-container {
+                max-width: 90%;
+        }
+
+        .navbar-logo-img {
+                max-height: 64px !important;
+        }
+}
+
+@media screen and (max-width: 800px) {
+        .navbar a {
+                float: none;
+                width: 100%;
+                margin: 0 !important;
+        }
+
+        .dropdown {
+                float: none;
+                width: 100%;
+                margin: 0 !important;
+        }
+
+        .navbar-logo-img {
+                max-height: 64px;
+        }
+
+        .navbar-logo-btn {
+                display: inline-block;
+                width: 100%;
+                float: none;
+                margin-left: auto;
+                margin-right: auto;
+        }
+
+        .navbar .dropdown-btn {
+                margin-top: 0 !important;
+        }
+
+        .dropdown .dropdown-btn {
+                width: 100%;
+        }
+
+        .dropdown-content {
+                width: 75%;
+        }
+
+        .dropdown-content a {
+                display: inline-block;
+                text-align: center !important;
+        }
+
+        .header {
+                padding: 20px !important;
+        }
+
+        .header h1 {
+                font-size: 20px !important;
+        }
+}
+
+/* ================================================ *
  *                   Body styles                    * 
  * ================================================ */
 
 * {
         box-sizing: border-box;
-}
-
-.background-text {
-        background-color: rgb(0,0,0);
-        background-color: rgba(0,0,0, 0.6);
-        color: white;
-        font-weight: bold;
-        border: 3px solid var(--color-gray-3);
-        z-index: 2;
-        width: 80%;
-        padding: 20px;
-        text-align: center;
-}
-
-.background-image {
-        height: 100%;
-    
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
 }
 
 body {
@@ -78,48 +137,6 @@ body {
         padding: 20px;
 }
 
-/* Some dark magic I found on w3schools, idk how this shit works */
-@media screen and (max-width: 700px) {
-        .main-content-flex {
-                flex-direction: column;
-        }
-}
-
-@media screen and (max-width: 400px) {
-        .navbar a {
-                float: none;
-                width: 100%;
-                margin: 0 !important;
-        }
-
-        .navbar-dropdown {
-                float: none;
-                width: 100%;
-                margin: 0 !important;
-        }
-
-        .navbar-dropdown .navbar-dropdown-btn {
-                width: 100%;
-        }
-
-        .navbar-dropdown-content {
-                width: 75%;
-        }
-
-        .navbar-dropdown-content a {
-                display: inline-block;
-                text-align: center !important;
-        }
-
-        .header {
-                padding: 20px !important;
-        }
-
-        .header h1 {
-                font-size: 20px !important;
-        }
-}
-
 /* ================================================ *
  *                  Header styles                   * 
  * ================================================ */
@@ -137,6 +154,30 @@ body {
         font-size: 40px;
 }
 
+.header-background-text {
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.6);
+        color: white;
+        font-weight: bold;
+        border: 3px solid var(--color-gray-3);
+        z-index: 2;
+        width: 80%;
+        padding: 20px;
+        text-align: center;
+}
+
+.header-background-image {
+        height: 100%;
+    
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+}
+
+/* ================================================ *
+ *                  Footer styles                   * 
+ * ================================================ */
+
 .footer {
         margin-top: auto; 
         padding: 20px;
@@ -149,6 +190,7 @@ body {
  * ================================================ */
 
 .navbar {
+        padding-top: 16px;
         overflow: hidden;
         background-color: black;
         font-family: inherit;
@@ -164,25 +206,6 @@ body {
         text-align: center;
         padding: 20px 24px;
         text-decoration: none;
-        line-height: 1.0;
-}
-
-.navbar-dropdown {
-        margin-top: var(--navbar-btn-margin);
-        float: right;
-        overflow: hidden;
-}
-
-.navbar-dropdown .navbar-dropdown-btn {
-        font-size: 16px;
-        text-align: center;
-        border: none;
-        outline: none;
-        color: white;
-        padding: 20px 24px;
-        background-color: inherit;
-        font-family: inherit;
-        margin: 0;
         line-height: 1.0;
 }
 
@@ -206,11 +229,44 @@ body {
         max-width: 100%;
 }
 
-.navbar a:hover, .navbar-dropdown:hover .navbar-dropdown-btn {
+.navbar .dropdown-btn {
+        margin-top: var(--navbar-btn-margin);
+}
+
+.navbar a:hover, .dropdown:hover .dropdown-btn {
         background-color: var(--color-blue-1);
 }
 
-.navbar-dropdown-content {
+.navbar a:hover, .dropdown:hover .dropdown-btn {
+        background-color: var(--color-blue-1);
+}
+
+/* ================================================ *
+ *                    Dropdowns                     * 
+ * ================================================ */
+
+.dropdown {
+        float: right;
+        overflow: hidden;
+}
+
+.dropdown .dropdown-btn {
+        font-size: 16px;
+        text-align: center;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 20px 24px;
+        background-color: inherit;
+        font-family: inherit;
+        line-height: 1.0;
+}
+
+.dropdown .dropdown-btn-active{
+        background-color: var(--color-blue-1);
+}
+
+.dropdown-content {
         display: none;
         position: absolute;
         background-color: #f9f9f9;
@@ -219,7 +275,7 @@ body {
         z-index: 1;
 }
       
-.navbar-dropdown-content a {
+.dropdown-content a {
         margin-top: 0;
         float: none;
         color: black;
@@ -229,10 +285,44 @@ body {
         text-align: left;
 }
 
-.navbar-dropdown-content a:hover {
+.dropdown-content a:hover {
         background-color: #ddd;
 }
 
-.navbar-dropdown:hover .navbar-dropdown-content {
+.dropdown:hover .dropdown-content {
         display: block;
 }
+
+.dropdown-content-show {
+        display: block;
+}
+
+/* ================================================ *
+ *                 Breadbruh styles                 * 
+ * ================================================ */
+
+ul.breadcrumb {
+        padding: 10px 16px;
+        list-style: none;
+}
+
+ul.breadcrumb li {
+        display: inline;
+        font-size: 16px;
+}
+
+ul.breadcrumb li+li:before {
+        padding: 8px;
+        color: var(--color-gray-2);
+        content: "/\00a0";
+}
+
+ul.breadcrumb li a {
+        color: var(--color-gray-2);
+        text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+        color: var(--color-gray-3);
+        text-decoration: underline;
+} 
