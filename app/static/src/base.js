@@ -1,20 +1,18 @@
 var isDropdownActive = false; /* Kill me */
 
-function menu_closeDropdowns()
+function menu_closeDropdowns(activeBtn = null, activeDropdown = null)
 {
-        let dropdowns = document.getElementsByClassName("dropdown-content");
-        for (let i = 0; i < dropdowns.length; i++) {
-                let openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('dropdown-content-show')) {
-                        openDropdown.classList.remove('dropdown-content-show');
+        let dropdown_buttons = document.getElementsByClassName("dropdown-btn");
+        for (let i = 0; i < dropdown_buttons.length; i++) {
+                if (dropdown_buttons[i] != activeBtn && dropdown_buttons[i].classList.contains('dropdown-btn-active')) {
+                        dropdown_buttons[i].classList.remove('dropdown-btn-active');
                 }
         }
 
-        let dropdown_buttons = document.getElementsByClassName("dropdown-btn");
-        for (let i = 0; i < dropdown_buttons.length; i++) {
-                let openDropdown = dropdown_buttons[i];
-                if (openDropdown.classList.contains('dropdown-btn-active')) {
-                        openDropdown.classList.remove('dropdown-btn-active');
+        let dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+                if (dropdowns[i] != activeDropdown && dropdowns[i].classList.contains('dropdown-content-show')) {
+                        dropdowns[i].classList.remove('dropdown-content-show');
                 }
         }
 }
@@ -22,19 +20,21 @@ function menu_closeDropdowns()
 function menu_showDropdown(e, id) 
 {
         if(window.matchMedia("(pointer: coarse)").matches) { 
+                let dropdown = document.getElementById(id);
+
                 if (!e.classList.contains('dropdown-btn-active') && isDropdownActive) {
-                        menu_closeDropdowns();
+                        menu_closeDropdowns(e, dropdown);
 
                         isDropdownActive = false;
                 }
                 if (e.classList.contains('dropdown-btn-active')) {
-                        document.getElementById(id).classList.remove("dropdown-content-show");
+                        dropdown.classList.remove("dropdown-content-show");
                         e.classList.remove("dropdown-btn-active");
 
                         isDropdownActive = false;
                 }
                 else {
-                        document.getElementById(id).classList.add("dropdown-content-show");
+                        dropdown.classList.add("dropdown-content-show");
                         e.classList.add("dropdown-btn-active");
 
                         isDropdownActive = true;
