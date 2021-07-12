@@ -1,3 +1,5 @@
+var isDropdownActive = false; /* Kill me */
+
 function menu_closeDropdowns()
 {
         let dropdowns = document.getElementsByClassName("dropdown-content");
@@ -17,18 +19,35 @@ function menu_closeDropdowns()
         }
 }
 
-function navbar_showDropdown(e, id) 
+function menu_showDropdown(e, id) 
 {
-        if(window.matchMedia("(pointer: coarse)").matches) {
-                menu_closeDropdowns();
-                document.getElementById(id).classList.toggle("dropdown-content-show");
-                e.classList.toggle("dropdown-btn-active");
+        if(window.matchMedia("(pointer: coarse)").matches) { 
+                if (!e.classList.contains('dropdown-btn-active') && isDropdownActive) {
+                        menu_closeDropdowns();
+
+                        isDropdownActive = false;
+                }
+                if (e.classList.contains('dropdown-btn-active')) {
+                        document.getElementById(id).classList.remove("dropdown-content-show");
+                        e.classList.remove("dropdown-btn-active");
+
+                        isDropdownActive = false;
+                }
+                else {
+                        document.getElementById(id).classList.add("dropdown-content-show");
+                        e.classList.add("dropdown-btn-active");
+
+                        isDropdownActive = true;
+                }
         }
 }
 
 window.onclick = function(event) 
 {
         if (!event.target.matches('.dropdown-btn')) {
-                menu_closeDropdowns();
+                if (isDropdownActive) {
+                        menu_closeDropdowns();
+                        isDropdownActive = false;
+                }
         }
 } 
