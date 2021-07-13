@@ -280,12 +280,14 @@ body {
 	margin-top: var(--navbar-btn-margin);
 }
 
-.navbar a:hover, .dropdown:hover .dropdown-btn {
-	background-color: var(--color-blue-1);
-}
-
-.navbar a:hover, .dropdown:hover .dropdown-btn {
-	background-color: var(--color-blue-1);
+@media (hover: hover) and (pointer: fine) {
+	.navbar a:hover, .dropdown:hover .dropdown-btn {
+		background-color: var(--color-blue-1);
+	}
+	
+	.navbar a:hover, .dropdown:hover .dropdown-btn {
+		background-color: var(--color-blue-1);
+	}
 }
 
 /* ================================================ *
