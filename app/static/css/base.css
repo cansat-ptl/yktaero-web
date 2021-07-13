@@ -332,16 +332,18 @@ body {
 	text-align: left;
 }
 
-.dropdown-content a:hover {
-	background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-	display: block;
-}
-
 .dropdown-content-show {
 	display: block;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .dropdown-content a:hover {
+		background-color: #ddd;
+	}
+	
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
 }
 
 /* ================================================ *

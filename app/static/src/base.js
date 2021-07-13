@@ -1,5 +1,5 @@
 var isDropdownActive = false; /* Kill me */
-var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0)); /* Holy crap what the hell is this */
+var isTouchSupported = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0)); /* Holy crap what the hell is this */
 
 function menu_closeDropdowns(activeBtn = null, activeDropdown = null)
 {
@@ -20,7 +20,7 @@ function menu_closeDropdowns(activeBtn = null, activeDropdown = null)
 
 function menu_showDropdown(e, id) 
 {
-        if (isTouch) { 
+        if (isTouchSupported) { 
                 let dropdown = document.getElementById(id);
 
                 if (!e.classList.contains('dropdown-btn-active') && isDropdownActive) {
