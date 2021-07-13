@@ -44,7 +44,8 @@ function menu_dropdownDelayed(activeBtn, activeDropdown)
 }
 
 function menu_showDropdown(e, id) 
-{
+{       
+        event.preventDefault();
         if (isTouchSupported && onClickTransition == null) { 
                 let dropdown = document.getElementById(id);
 
