@@ -48,7 +48,7 @@ function menu_showDropdown(e, id)
         if (isTouchSupported && onClickTransition == null) { 
                 let dropdown = document.getElementById(id);
 
-                onClickTransition = setTimeout(menu_dropdownDelayed, 400, e, dropdown);
+                onClickTransition = setTimeout(menu_dropdownDelayed, 100, e, dropdown);
         }
 }
 
