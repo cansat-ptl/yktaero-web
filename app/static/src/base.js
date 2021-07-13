@@ -1,6 +1,8 @@
 var isDropdownActive = false; /* Kill me */
 var isTouchSupported = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0)); /* Holy crap what the hell is this */
 
+var onClickTransition = null; 
+
 function menu_closeDropdowns(activeBtn = null, activeDropdown = null)
 {
         let dropdown_buttons = document.getElementsByClassName("dropdown-btn");
@@ -18,28 +20,35 @@ function menu_closeDropdowns(activeBtn = null, activeDropdown = null)
         }
 }
 
+function menu_dropdownDelayed(activeBtn, activeDropdown)
+{
+        if (!activeBtn.classList.contains('dropdown-btn-active') && isDropdownActive) {
+                menu_closeDropdowns(activeBtn, activeDropdown);
+
+                isDropdownActive = false;
+        }
+        if (activeBtn.classList.contains('dropdown-btn-active')) {
+                activeDropdown.classList.remove("dropdown-content-show");
+                activeBtn.classList.remove("dropdown-btn-active");
+
+                isDropdownActive = false;
+        }
+        else {
+                activeDropdown.classList.add("dropdown-content-show");
+                activeBtn.classList.add("dropdown-btn-active");
+
+                isDropdownActive = true;
+        }
+
+        onClickTransition = null;
+}
+
 function menu_showDropdown(e, id) 
 {
-        if (isTouchSupported) { 
+        if (isTouchSupported && onClickTransition == null) { 
                 let dropdown = document.getElementById(id);
 
-                if (!e.classList.contains('dropdown-btn-active') && isDropdownActive) {
-                        menu_closeDropdowns(e, dropdown);
-
-                        isDropdownActive = false;
-                }
-                if (e.classList.contains('dropdown-btn-active')) {
-                        dropdown.classList.remove("dropdown-content-show");
-                        e.classList.remove("dropdown-btn-active");
-
-                        isDropdownActive = false;
-                }
-                else {
-                        dropdown.classList.add("dropdown-content-show");
-                        e.classList.add("dropdown-btn-active");
-
-                        isDropdownActive = true;
-                }
+                onClickTransition = setTimeout(menu_dropdownDelayed, 300, e, dropdown);
         }
 }
 
