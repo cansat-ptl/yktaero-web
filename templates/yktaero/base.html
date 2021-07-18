@@ -3,24 +3,29 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="{{ url_for('static', filename='./css/base.css') }}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='./css/icons.css') }}">
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'css/base.css' %}">
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'css/icons.css' %}">
 		<title>{% block title %}{% endblock %}</title>
 		<style>
 			.header-background-image {
-				background-image: url("{{ url_for('static', filename='./img/bkg.jpg') }}");
+				background-image: url("{% static 'img/bkg.jpg' %}");
 			}
 		</style>
 	</head>
 
 	<body>
-		<link rel="stylesheet" href="{{ url_for('static', filename='./css/normalize.css') }}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='./css/sanitize.css') }}">
-		<script type="text/javascript" src="{{ url_for('static', filename='./src/base.js') }}"></script>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'css/sanitize.css' %}">
+		{% load static %}
+		<script type="text/javascript" src="{% static 'src/base.js' %}"></script>
 		<div class="navbar">
 			<div class="main-align-center">
 				<button class="navbar-logo-btn">
-					<img src="{{ url_for('static', filename='./img/logo.svg') }}" class="navbar-logo-img">
+					<img src="{% static 'img/logo.svg' %}" class="navbar-logo-img">
 				</button>
 				<a href="#home">Контакты</a>
 				<a href="#news">Новости</a>
@@ -66,10 +71,10 @@
 				</div>
 				<div class="footer-content-right">
 					<h2>Ресурсы для разработчиков:</h2>
-					<a href="#">GitLab</a>
+					<a href="git.yktaero.space">GitLab</a>
 					<p>Сюда надо иконки сделать</p>
 					<h2>Социальные сети:</h2>
-					<p>Пусто ахахахаха</p>
+					<p>Пусто</p>
 				</div>
 			</div>
 		</div> 
