@@ -1,8 +1,8 @@
 :root {
-	--color-blue-1: #457AAB;
+	--color-blue-1: #457aab;
 	--color-blue-2: #285580;
-	--color-blue-3: #D0E1EF;
-	--color-blue-4: #5F90BF;
+	--color-blue-3: #d0e1ef;
+	--color-blue-4: #5f90bf;
 	--color-black-1: #222222;
 	--color-gray-1: #48555c;
 	--color-gray-2: #9b9b9b;
@@ -10,7 +10,7 @@
 	--color-gray-4: #a8a8a8;
 
 	--navbar-btn-margin: 44px;
-	
+
 	font-size: 16px;
 	font-family: Arial, sans-serif;
 }
@@ -49,8 +49,8 @@ body {
 	justify-content: space-between;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
-	margin-left: auto; 
-	margin-right: auto; 
+	margin-left: auto;
+	margin-right: auto;
 	display: flex;
 	flex-direction: row;
 
@@ -77,8 +77,8 @@ body {
 .header-background-text {
 	width: 75%;
 	max-width: 1280px;
-	background-color: rgb(0,0,0);
-	background-color: rgba(0,0,0, 0.6);
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.6);
 	color: white;
 	font-weight: bold;
 	border: 3px solid var(--color-gray-3);
@@ -90,7 +90,7 @@ body {
 
 .header-background-image {
 	height: 100%;
-    
+
 	background-position: center !important;
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
@@ -101,7 +101,7 @@ body {
  * ================================================ */
 
 .footer {
-	margin-top: auto; 
+	margin-top: auto;
 	padding: 20px;
 	color: white;
 	background: var(--color-black-1);
@@ -112,20 +112,20 @@ body {
 	justify-content: space-between;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
-	margin-left: auto; 
-	margin-right: auto; 
+	margin-left: auto;
+	margin-right: auto;
 	width: 75%;
 	max-width: 1280px;
 	display: flex;
 }
 
-.footer-content{
+.footer-content {
 	flex: 33%;
 	padding: 20px;
 }
 
 .footer p {
-	color: var(--color-gray-2)
+	color: var(--color-gray-2);
 }
 
 .footer a {
@@ -153,7 +153,7 @@ body {
 	text-align: center;
 	padding: 20px 24px;
 	text-decoration: none;
-	line-height: 1.0;
+	line-height: 1;
 }
 
 .navbar-logo-btn {
@@ -165,7 +165,7 @@ body {
 	background-color: inherit;
 	font-family: inherit;
 	margin: 0;
-	line-height: 1.0;
+	line-height: 1;
 }
 
 .navbar-logo-img {
@@ -208,11 +208,11 @@ body {
 	padding: 20px 24px;
 	background-color: inherit;
 	font-family: inherit;
-	line-height: 1.0;
+	line-height: 1;
 	touch-action: auto !important;
 }
 
-.dropdown .dropdown-btn-active{
+.dropdown .dropdown-btn-active {
 	background-color: var(--color-blue-1);
 }
 
@@ -221,10 +221,10 @@ body {
 	position: absolute;
 	background-color: #f9f9f9;
 	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
 }
-      
+
 .dropdown-content a {
 	margin-top: 0;
 	float: none;
@@ -240,10 +240,10 @@ body {
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .dropdown-content a:hover {
+	.dropdown-content a:hover {
 		background-color: #ddd;
 	}
-	
+
 	.dropdown:hover .dropdown-content {
 		display: block;
 	}
@@ -263,7 +263,7 @@ ul.breadcrumb li {
 	font-size: 16px;
 }
 
-ul.breadcrumb li+li:before {
+ul.breadcrumb li + li:before {
 	padding: 8px;
 	color: var(--color-gray-2);
 	content: "/\00a0";
@@ -277,16 +277,16 @@ ul.breadcrumb li a {
 ul.breadcrumb li a:hover {
 	color: var(--color-gray-3);
 	text-decoration: underline;
-} 
+}
 
 /* ================================================ *
  *                   Button styles                  * 
  * ================================================ */
 
- .button {
+.button {
 	-webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
+	-moz-appearance: button;
+	appearance: button;
 
 	padding: 12px;
 
@@ -294,11 +294,11 @@ ul.breadcrumb li a:hover {
 	text-align: center;
 	color: white;
 
-	background: #457AAB;
+	background: #457aab;
 	border-radius: 2px;
- }
+}
 
-.button:active { 
+.button:active {
 	background-color: var(--color-blue-2);
 }
 
@@ -316,7 +316,7 @@ ul.breadcrumb li a:hover {
 	width: 32%;
 	max-width: 400px;
 
-	background: #F8F8F8;
+	background: #f8f8f8;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 5px;
 }
@@ -348,7 +348,7 @@ ul.breadcrumb li a:hover {
 .card .button {
 	margin-top: 8px;
 }
- 
+
 /* ================================================ *
  *                  Responsiveness                  * 
  * ================================================ */
@@ -369,7 +369,7 @@ ul.breadcrumb li a:hover {
 	.main-align-center {
 		max-width: 90%;
 	}
-	
+
 	.main-container {
 		max-width: 90%;
 	}

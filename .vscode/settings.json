@@ -4,5 +4,8 @@
         "pylint_flask_sqlalchemy",
         "pylint_flask"
     ],
-    "editor.insertSpaces": false
+    "editor.insertSpaces": false,
+    "prettier.printWidth": 120,
+    "prettier.useTabs": true,
+    "prettier.tabWidth": 4
 }

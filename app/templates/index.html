@@ -1,8 +1,5 @@
-{% extends "base.html" %}
-{% block title %}Главная{% endblock %}
-
-{% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='./css/mainpage.css') }}">
+{% extends "base.html" %} {% block title %}Главная{% endblock %} {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='./css/mainpage.css') }}" />
 
 <div class="header header-background-image">
 	<div class="main-align-center header-background-text">
@@ -12,41 +9,29 @@
 			<li><a href="#">Подраздел 1</a></li>
 			<li><a href="#">Подраздел 2</a></li>
 			<li>Главная</li>
-		</ul> 
+		</ul>
 	</div>
 </div>
 <div class="main-container">
 	<div class="main-container-flex-row">
 		<div class="card">
-			<img src="{{ url_for('static', filename='./img/test.jpg') }}" class="card-image"/>
-			<div class="card-header">
-				Dayum it actually works
-			</div>
-			<div class="card-text">
-				aaaaaaaaaaaa aaaa a aaaaa
-			</div>
+			<img src="{{ url_for('static', filename='./img/test.jpg') }}" class="card-image" />
+			<div class="card-header">Dayum it actually works</div>
+			<div class="card-text">aaaaaaaaaaaa aaaa a aaaaa</div>
 			<a href="#" class="button">Check it out</a>
 		</div>
 		<div class="card">
-			<img src="{{ url_for('static', filename='./img/test.jpg') }}" class="card-image"/>
-			<div class="card-header">
-				Dayum it actually works
-			</div>
-			<div class="card-text">
-				aaaaaaaaaaaa aaaa a aaaaa
-			</div>
+			<img src="{{ url_for('static', filename='./img/test.jpg') }}" class="card-image" />
+			<div class="card-header">Dayum it actually works</div>
+			<div class="card-text">aaaaaaaaaaaa aaaa a aaaaa</div>
 			<a href="#" class="button">Check it out</a>
 		</div>
 		<div class="card">
-			<img src="{{ url_for('static', filename='./img/test.jpg') }}" class="card-image"/>
-			<div class="card-header">
-				Dayum it actually works
-			</div>
-			<div class="card-text">
-				aaaaaaaaaaaa aaaa a aaaaa
-			</div>
+			<img src="{{ url_for('static', filename='./img/test.jpg') }}" class="card-image" />
+			<div class="card-header">Dayum it actually works</div>
+			<div class="card-text">aaaaaaaaaaaa aaaa a aaaaa</div>
 			<a href="#" class="button">Check it out</a>
 		</div>
 	</div>
-</div> 
+</div>
 {% endblock %}
