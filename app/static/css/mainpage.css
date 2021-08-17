@@ -4,7 +4,7 @@
 	align-items: center;
 	padding: 12px;
 	border-radius: 5px;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 	background: #f8f8f8;
 
 	height: auto;
@@ -13,12 +13,12 @@
 	margin: 12px 0px;
 }
 
-.project-card-image {
+.project-card .card-image {
 	width: 40%;
 	border-radius: 5px;
 }
 
-.project-card-content {
+.project-card .card-content {
 	width: 60%;
 
 	display: flex;
@@ -29,16 +29,20 @@
 	margin: 0px 40px;
 }
 
-.project-card-header {
+.project-card .card-header {
 	font-weight: bold;
 
+	text-align: left;
+	padding: 0;
 	font-size: 24px;
 	line-height: 28px;
 
 	margin: 0px;
 }
 
-.project-card-text {
+.project-card .card-text {
+	text-align: left;
+	padding: 0;
 	margin: 20px 0px;
 }
 
@@ -48,6 +52,33 @@
 
 .card-image-even {
 	order: 1;
+}
+
+.about-org .project-card {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 12px;
+
+	filter: none;
+	background: none;
+
+	height: auto;
+	min-height: 200px;
+
+	margin: 12px 0px;
+}
+
+.about-org .card-header {
+	font-weight: bold;
+
+	font-size: 2em;
+
+	margin: 0px;
+}
+
+.about-org .card-text {
+	margin: 32px 0px;
 }
 
 /* I have no idea what am i doing */
