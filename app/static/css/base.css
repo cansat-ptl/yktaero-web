@@ -1,4 +1,6 @@
 :root {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
 	--color-blue-1: #457aab;
 	--color-blue-2: #285580;
 	--color-blue-3: #d0e1ef;
@@ -8,11 +10,7 @@
 	--color-gray-2: #9b9b9b;
 	--color-gray-3: #f5f5f5;
 	--color-gray-4: #a8a8a8;
-
 	--navbar-btn-margin: 44px;
-
-	font-size: 16px;
-	font-family: Arial, sans-serif;
 }
 
 /* ================================================ *
@@ -26,35 +24,41 @@
 body {
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
 	margin: 0px;
+	min-height: 100vh;
 	font-family: Arial, sans-serif;
 }
 
-.main-align-center {
-	max-width: 75%;
+.align-center {
 	margin: auto;
+	max-width: 75%;
 }
 
-.main-container {
-	width: 75%;
-	max-width: 1280px;
+.container {
 	margin: auto;
 	margin-top: 10px;
 	margin-bottom: 50px;
+	width: 75%;
+	max-width: 1280px;
 }
 
-.main-container-flex-row {
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	margin-left: auto;
-	margin-right: auto;
+.container-flex {
 	display: flex;
-	flex-direction: row;
-
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-right: auto;
+	margin-left: auto;
 	padding: 16px;
+	-ms-flex-pack: justify;
+	-ms-flex-wrap: wrap;
+}
+
+.flex-row {
+	flex-direction: row;
+}
+
+.flex-col {
+	flex-direction: column;
 }
 
 /* ================================================ *
@@ -62,11 +66,11 @@ body {
  * ================================================ */
 
 .header {
+	background: var(--color-blue-1);
 	padding: 80px;
 	padding-top: 160px;
 	padding-bottom: 160px;
 	text-align: center;
-	background: var(--color-blue-1);
 	color: white;
 }
 
@@ -75,25 +79,22 @@ body {
 }
 
 .header-background-text {
-	width: 75%;
-	max-width: 1280px;
-	background-color: rgb(0, 0, 0);
+	z-index: 2;
+	border: 3px solid var(--color-gray-3);
 	background-color: rgba(0, 0, 0, 0.6);
+	padding: 20px;
+	width: 80%;
+	max-width: 1280px;
+	text-align: center;
 	color: white;
 	font-weight: bold;
-	border: 3px solid var(--color-gray-3);
-	z-index: 2;
-	width: 80%;
-	padding: 20px;
-	text-align: center;
 }
 
 .header-background-image {
-	height: 100%;
-
 	background-position: center !important;
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
+	height: 100%;
 }
 
 /* ================================================ *
@@ -102,21 +103,21 @@ body {
 
 .footer {
 	margin-top: auto;
+	background: var(--color-black-1);
 	padding: 20px;
 	color: white;
-	background: var(--color-black-1);
 }
 
 .footer-content-flex {
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-	-ms-flex-wrap: wrap;
+	display: flex;
 	flex-wrap: wrap;
-	margin-left: auto;
+	justify-content: space-between;
 	margin-right: auto;
+	margin-left: auto;
 	width: 75%;
 	max-width: 1280px;
-	display: flex;
+	-ms-flex-pack: justify;
+	-ms-flex-wrap: wrap;
 }
 
 .footer-content {
@@ -137,43 +138,43 @@ body {
  * ================================================ */
 
 .navbar {
+	background-color: black;
 	padding-top: 16px;
 	overflow: hidden;
-	background-color: black;
 	font-family: inherit;
 }
 
 .navbar a {
-	margin-top: var(--navbar-btn-margin);
 	position: relative;
 	bottom: 0px;
 	float: right;
-	font-size: 16px;
-	color: white;
-	text-align: center;
+	margin-top: var(--navbar-btn-margin);
 	padding: 20px 24px;
+	text-align: center;
 	text-decoration: none;
 	line-height: 1;
+	color: white;
+	font-size: 16px;
 }
 
 .navbar-logo-btn {
 	float: left;
-	border: none;
-	outline: none;
-	color: white;
-	padding: 10px 12px;
-	background-color: inherit;
-	font-family: inherit;
 	margin: 0;
+	outline: none;
+	border: none;
+	background-color: inherit;
+	padding: 10px 12px;
 	line-height: 1;
+	color: white;
+	font-family: inherit;
 }
 
 .navbar-logo-img {
-	width: auto;
 	margin-top: auto;
 	margin-bottom: auto;
-	max-height: 80px;
+	width: auto;
 	max-width: 100%;
+	max-height: 80px;
 }
 
 .navbar .dropdown-btn {
@@ -185,8 +186,16 @@ body {
 }
 
 @media (hover: hover) and (pointer: fine) {
-	.navbar .dropdown:hover .dropdown-btn {
+	.navbar button:hover {
 		background-color: var(--color-blue-1);
+	}
+
+	.dropdown-content a:hover {
+		background-color: #ddd;
+	}
+	
+	.dropdown:hover .dropdown-content {
+		display: block;
 	}
 }
 
@@ -200,15 +209,15 @@ body {
 }
 
 .dropdown .dropdown-btn {
-	font-size: 16px;
-	text-align: center;
-	border: none;
 	outline: none;
-	color: white;
-	padding: 20px 24px;
+	border: none;
 	background-color: inherit;
-	font-family: inherit;
+	padding: 20px 24px;
+	text-align: center;
 	line-height: 1;
+	color: white;
+	font-family: inherit;
+	font-size: 16px;
 	touch-action: auto !important;
 }
 
@@ -219,34 +228,24 @@ body {
 .dropdown-content {
 	display: none;
 	position: absolute;
+	z-index: 1;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	background-color: #f9f9f9;
 	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 1;
 }
 
 .dropdown-content a {
-	margin-top: 0;
-	float: none;
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
 	display: block;
+	float: none;
+	margin-top: 0;
+	padding: 12px 16px;
 	text-align: left;
+	text-decoration: none;
+	color: black;
 }
 
 .dropdown-content-show {
 	display: block;
-}
-
-@media (hover: hover) and (pointer: fine) {
-	.dropdown-content a:hover {
-		background-color: #ddd;
-	}
-
-	.dropdown:hover .dropdown-content {
-		display: block;
-	}
 }
 
 /* ================================================ *
@@ -270,13 +269,13 @@ ul.breadcrumb li + li:before {
 }
 
 ul.breadcrumb li a {
-	color: var(--color-gray-2);
 	text-decoration: none;
+	color: var(--color-gray-2);
 }
 
 ul.breadcrumb li a:hover {
-	color: var(--color-gray-3);
 	text-decoration: underline;
+	color: var(--color-gray-3);
 }
 
 /* ================================================ *
@@ -284,18 +283,15 @@ ul.breadcrumb li a:hover {
  * ================================================ */
 
 .button {
+	border-radius: 2px;
+	background: #457aab;
+	padding: 12px;
+	text-align: center;
+	text-decoration: none;
+	color: white;
 	-webkit-appearance: button;
 	-moz-appearance: button;
 	appearance: button;
-
-	padding: 12px;
-
-	text-decoration: none;
-	text-align: center;
-	color: white;
-
-	background: #457aab;
-	border-radius: 2px;
 }
 
 .button:active {
@@ -309,42 +305,36 @@ ul.breadcrumb li a:hover {
 .card {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	background: #f8f8f8;
 	padding: 0px 0px 20px;
-
 	width: 32%;
 	max-width: 400px;
-
-	background: #f8f8f8;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	border-radius: 5px;
 }
 
 .card-header {
+	margin: 16px 0px 0px 8px;
 	padding: 0px 16px;
-
-	font-weight: bold;
-	font-size: 24px;
-	line-height: 28px;
 	text-align: center;
-
-	margin: 8px 0px;
+	line-height: 28px;
+	font-size: 24px;
+	font-weight: bold;
 }
 
 .card-text {
-	padding: 0px 16px;
-
-	text-align: center;
-
 	margin: 8px 0px;
+	padding: 0px 16px;
+	text-align: center;
 }
 
 .card-image {
 	border-radius: 5px 5px 0 0;
 	width: 100%;
-	margin: 8px 0px;
 }
+
 .card .button {
 	margin-top: 8px;
 }
@@ -369,7 +359,7 @@ ul.breadcrumb li a:hover {
 	.main-align-center {
 		max-width: 90%;
 	}
-
+	
 	.main-container {
 		max-width: 90%;
 	}
@@ -382,13 +372,13 @@ ul.breadcrumb li a:hover {
 /* I have no idea what am i doing */
 @media screen and (max-width: 950px) {
 	.navbar a {
-		width: 100%;
 		margin: 0;
+		width: 100%;
 	}
 
 	.dropdown {
-		width: 100%;
 		margin: 0;
+		width: 100%;
 	}
 
 	.navbar-logo-img {
@@ -397,10 +387,10 @@ ul.breadcrumb li a:hover {
 
 	.navbar-logo-btn {
 		display: inline-block;
-		width: 100%;
 		float: none;
-		margin-left: auto;
 		margin-right: auto;
+		margin-left: auto;
+		width: 100%;
 	}
 
 	.navbar .dropdown-btn {
@@ -413,7 +403,7 @@ ul.breadcrumb li a:hover {
 	}
 
 	.dropdown-content {
-		width: 90%;
+		width: 75%;
 	}
 
 	.dropdown-content a {
@@ -434,8 +424,8 @@ ul.breadcrumb li a:hover {
 	}
 
 	.card {
+		margin: 8px 0px;
 		width: 100%;
 		max-width: 100%;
-		margin: 8px 0px;
 	}
 }

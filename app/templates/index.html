@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='./css/mainpage.css') }}" />
 
 <div class="header header-background-image">
-	<div class="main-align-center header-background-text">
+	<div class="align-center header-background-text">
 		<h1>Цифры какие-то, буквы</h1>
 		<ul class="breadcrumb">
 			<li><a href="#">Раздел 1</a></li>
@@ -12,8 +12,34 @@
 		</ul>
 	</div>
 </div>
-<div class="main-container">
-	<div class="main-container-flex-row">
+<div class="container">
+	<div class="container-flex flex-col">
+		<div class="project-card">
+			<img src="{{ url_for('static', filename='./img/test.jpg') }}" class="project-card-image card-image-odd" />
+			<div class="project-card-content">
+				<div class="project-card-header">Dayum it actually works</div>
+				<div class="project-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ac laoreet sit consequat sed tellus sagittis amet maecenas. Interdum enim iaculis malesuada pellentesque est viverra mus turpis sit. Sem mauris proin aliquet et semper nulla et aliquam. Congue porttitor mollis egestas turpis mauris eu, faucibus sollicitudin. Risus sapien cras leo vitae eget metus enim metus. Sed massa sed sed faucibus. Ullamcorper facilisi a, ullamcorper enim cursus suspendisse.</div>
+				<a href="#" class="button">Check it out</a>
+			</div>
+		</div>
+		<div class="project-card">
+			<img src="{{ url_for('static', filename='./img/test.jpg') }}" class="project-card-image card-image-even" />
+			<div class="project-card-content">
+				<div class="project-card-header">Dayum it actually works</div>
+				<div class="project-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ac laoreet sit consequat sed tellus sagittis amet maecenas. Interdum enim iaculis malesuada pellentesque est viverra mus turpis sit. Sem mauris proin aliquet et semper nulla et aliquam. Congue porttitor mollis egestas turpis mauris eu, faucibus sollicitudin. Risus sapien cras leo vitae eget metus enim metus. Sed massa sed sed faucibus. Ullamcorper facilisi a, ullamcorper enim cursus suspendisse.</div>
+				<a href="#" class="button">Check it out</a>
+			</div>
+		</div>
+		<div class="project-card">
+			<img src="{{ url_for('static', filename='./img/test.jpg') }}" class="project-card-image card-image-odd" />
+			<div class="project-card-content">
+				<div class="project-card-header">Dayum it actually works</div>
+				<div class="project-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ac laoreet sit consequat sed tellus sagittis amet maecenas. Interdum enim iaculis malesuada pellentesque est viverra mus turpis sit. Sem mauris proin aliquet et semper nulla et aliquam. Congue porttitor mollis egestas turpis mauris eu, faucibus sollicitudin. Risus sapien cras leo vitae eget metus enim metus. Sed massa sed sed faucibus. Ullamcorper facilisi a, ullamcorper enim cursus suspendisse.</div>
+				<a href="#" class="button">Check it out</a>
+			</div>
+		</div>
+	</div>
+	<div class="container-flex flex-row">
 		<div class="card">
 			<img src="{{ url_for('static', filename='./img/test.jpg') }}" class="card-image" />
 			<div class="card-header">Dayum it actually works</div>
