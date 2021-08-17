@@ -16,88 +16,6 @@
 }
 
 /* ================================================ *
- *                  Responsiveness                  * 
- * ================================================ */
-/* Some dark magic I found on w3schools, idk how this shit works */
-@media screen and (max-width: 1080px) {
-	:root {
-		--navbar-btn-margin: 28px;
-	}
-
-	.navbar-logo-img {
-		max-height: 64px !important;
-	}
-
-	.main-content-flex {
-		flex-direction: column;
-	}
-
-	.main-align-center {
-		max-width: 90%;
-	}
-	
-	.main-container {
-		max-width: 90%;
-	}
-
-	.footer-content-flex {
-		flex-direction: column;
-	}
-}
-
-/* I have no idea what am i doing */
-@media screen and (max-width: 800px) {
-	.navbar a {
-		float: none;
-		width: 100%;
-		margin: 0 !important;
-	}
-
-	.dropdown {
-		float: none;
-		width: 100%;
-		margin: 0 !important;
-	}
-
-	.navbar-logo-img {
-		max-height: 64px;
-	}
-
-	.navbar-logo-btn {
-		display: inline-block;
-		width: 100%;
-		float: none;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.navbar .dropdown-btn {
-		margin-top: 0 !important;
-	}
-
-	.dropdown .dropdown-btn {
-		width: 100%;
-	}
-
-	.dropdown-content {
-		width: 75%;
-	}
-
-	.dropdown-content a {
-		display: inline-block;
-		text-align: center !important;
-	}
-
-	.header {
-		padding: 20px !important;
-	}
-
-	.header h1 {
-		font-size: 20px !important;
-	}
-}
-
-/* ================================================ *
  *                    Body styles                   * 
  * ================================================ */
 
@@ -126,25 +44,17 @@ body {
 	margin-bottom: 50px;
 }
 
-.main-content-flex {
+.main-container-flex-row {
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
+	margin-left: auto; 
+	margin-right: auto; 
 	display: flex;
-}
+	flex-direction: row;
 
-.main-content-side {
-	flex: 25%;
-	background-color: var(--color-gray-3);
-	border-radius: 3px;
-	padding: 20px;
-}
-   
-.main-content-center {
-	flex: 75%;
-	background-color: white;
-	padding: 20px;
+	padding: 16px;
 }
 
 /* ================================================ *
@@ -209,17 +119,7 @@ body {
 	display: flex;
 }
 
-.footer-content-left {
-	flex: 33%;
-	padding: 20px;
-}
-   
-.footer-content-center {
-	flex: 34%;
-	padding: 20px;
-}
-
-.footer-content-right {
+.footer-content{
 	flex: 33%;
 	padding: 20px;
 }
@@ -378,3 +278,164 @@ ul.breadcrumb li a:hover {
 	color: var(--color-gray-3);
 	text-decoration: underline;
 } 
+
+/* ================================================ *
+ *                   Button styles                  * 
+ * ================================================ */
+
+ .button {
+	-webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+	padding: 12px;
+
+	text-decoration: none;
+	text-align: center;
+	color: white;
+
+	background: #457AAB;
+	border-radius: 2px;
+ }
+
+.button:active { 
+	background-color: var(--color-blue-2);
+}
+
+/* ================================================ *
+ *                    Card styles                   * 
+ * ================================================ */
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 0px 20px;
+
+	width: 32%;
+	max-width: 400px;
+
+	background: #F8F8F8;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+}
+
+.card-header {
+	padding: 0px 16px;
+
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 28px;
+	text-align: center;
+
+	margin: 8px 0px;
+}
+
+.card-text {
+	padding: 0px 16px;
+
+	text-align: center;
+
+	margin: 8px 0px;
+}
+
+.card-image {
+	border-radius: 5px 5px 0 0;
+	width: 100%;
+	margin: 8px 0px;
+}
+.card .button {
+	margin-top: 8px;
+}
+ 
+/* ================================================ *
+ *                  Responsiveness                  * 
+ * ================================================ */
+/* Some dark magic I found on w3schools, idk how this shit works */
+@media screen and (max-width: 1100px) {
+	:root {
+		--navbar-btn-margin: 28px;
+	}
+
+	.navbar-logo-img {
+		max-height: 64px;
+	}
+
+	.main-content-flex {
+		flex-direction: column;
+	}
+
+	.main-align-center {
+		max-width: 90%;
+	}
+	
+	.main-container {
+		max-width: 90%;
+	}
+
+	.footer-content-flex {
+		flex-direction: column;
+	}
+}
+
+/* I have no idea what am i doing */
+@media screen and (max-width: 950px) {
+	.navbar a {
+		width: 100%;
+		margin: 0;
+	}
+
+	.dropdown {
+		width: 100%;
+		margin: 0;
+	}
+
+	.navbar-logo-img {
+		max-height: 64px;
+	}
+
+	.navbar-logo-btn {
+		display: inline-block;
+		width: 100%;
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.navbar .dropdown-btn {
+		margin-top: 0;
+		width: 100%;
+	}
+
+	.dropdown .dropdown-btn {
+		width: 100%;
+	}
+
+	.dropdown-content {
+		width: 90%;
+	}
+
+	.dropdown-content a {
+		display: inline-block;
+		text-align: center;
+	}
+
+	.header {
+		padding: 20px;
+	}
+
+	.header h1 {
+		font-size: 20px;
+	}
+
+	.main-container-flex-row {
+		flex-direction: column;
+	}
+
+	.card {
+		width: 100%;
+		max-width: 100%;
+		margin: 8px 0px;
+	}
+}
