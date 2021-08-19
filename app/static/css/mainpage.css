@@ -1,3 +1,7 @@
+/* ================================================ *
+ *               ProjectCard styles                 * 
+ * ================================================ */
+
 .project-card {
 	display: flex;
 	flex-direction: row;
@@ -54,6 +58,10 @@
 	order: 1;
 }
 
+/* ================================================ *
+ *                 AboutOrg styles                  * 
+ * ================================================ */
+
 .about-org .project-card {
 	display: flex;
 	flex-direction: row;
@@ -81,26 +89,59 @@
 	margin: 32px 0px;
 }
 
+/* ================================================ *
+ *                   Misc styles                    * 
+ * ================================================ */
+
+.news-button {
+	margin: 40px 0px;
+}
+
+/* ================================================ *
+ *                  Responsiveness                  * 
+ * ================================================ */
 /* I have no idea what am i doing */
 @media screen and (max-width: 950px) {
-	.project-card {
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.project-card-image {
+	.project-card .card-image {
 		width: 100%;
 	}
 
-	.project-card-content {
+	.project-card .card-content {
+		width: 100%;
 		margin: 16px;
 		align-items: center;
 		justify-content: center;
 	}
 
+	.project-card .card-header {
+		text-align: center;
+	}
+
+	.project-card .card-text {
+		text-align: center;
+	}
+
 	.project-card {
 		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 8px 0px;
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.card-image-odd {
+		order: 0;
+	}
+	
+	.card-image-even {
+		order: 0;
+	}
+
+	.about-org .project-card {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		margin: 8px 0px;
 		width: 100%;
 		max-width: 100%;

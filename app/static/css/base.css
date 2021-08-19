@@ -49,7 +49,7 @@ body {
 	justify-content: space-between;
 	margin-right: auto;
 	margin-left: auto;
-	padding: 16px;
+	padding: 0px 16px;
 	-ms-flex-pack: justify;
 	-ms-flex-wrap: wrap;
 }
@@ -63,7 +63,7 @@ body {
 }
 
 .spacer {
-	padding: 24px;
+	margin: 16px 0px;
 }
 
 /* ================================================ *
@@ -144,6 +144,77 @@ h1 {
 	color: white;
 }
 
+/* ================================================ *
+ *                 ContactUs styles                 * 
+ * ================================================ */
+
+ .contact {
+	margin-top: auto;
+	background: var(--color-blue-1);
+	padding: 20px;
+	color: white;
+}
+
+.contact-content-flex {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-right: auto;
+	margin-left: auto;
+	width: 75%;
+	max-width: 1280px;
+	-ms-flex-pack: justify;
+	-ms-flex-wrap: wrap;
+}
+
+.contact-content {
+	flex: 50%;
+	padding: 20px;
+}
+
+.contact input, select, textarea {
+	margin: 8px 0px;
+	width: 100%;
+}
+
+.contact input[type=submit]{
+	padding: 20px 20px;
+}
+
+.contact select, textarea {
+	height: 200px;
+}
+
+.contact p {
+	text-align: center;
+	margin-top: 0; 
+	margin-bottom: 0;
+	color: var(--color-blue-3);
+}
+
+.contact h1 {
+	text-align: center;
+	margin-top: 0; 
+	margin-bottom: 0;
+}
+
+.contact-map-flex {
+	display: flex;
+	flex-direction: column;
+}
+
+.contact-map-img {
+	margin: 16px 0px;
+	width: 100%;
+}
+
+.contact-icons-flex {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-between;
+}
 /* ================================================ *
  *                   Navbar styles                  * 
  * ================================================ */
@@ -307,11 +378,34 @@ ul.breadcrumb li a:hover {
 
 .button-large {
 	padding: 20px 32px;
-	font-size: 24px;
+	font-size: 18px;
 }
 
 .button:active {
 	background-color: var(--color-blue-2);
+}
+
+/* ================================================ *
+ *                   Input styles                   * 
+ * ================================================ */
+ input[type=text], select, textarea {
+	padding: 16px;
+	border-radius: 2px;
+	border: none;
+	resize: vertical;
+}
+
+input[type=submit] {
+	background-color: var(--color-black-1);
+	color: #f8f8f8;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: var(--color-gray-1);
 }
 
 /* ================================================ *
@@ -326,7 +420,7 @@ ul.breadcrumb li a:hover {
 	border-radius: 5px;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 	background: #f8f8f8;
-	padding: 12px 0px 20px;
+	padding: 0px 0px 20px;
 	width: 32%;
 	max-width: 400px;
 }
@@ -443,5 +537,9 @@ ul.breadcrumb li a:hover {
 		margin: 12px 0px;
 		width: 100%;
 		max-width: 100%;
+	}
+
+	.contact {
+		display: none;
 	}
 }

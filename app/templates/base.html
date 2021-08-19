@@ -3,6 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='./css/normalize.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='./css/sanitize.css') }}" />
 		<link rel="stylesheet" href="{{ url_for('static', filename='./css/base.css') }}" />
 		<link rel="stylesheet" href="{{ url_for('static', filename='./css/icons.css') }}" />
 		<title>{% block title %}{% endblock %}</title>
@@ -14,8 +16,6 @@
 	</head>
 
 	<body>
-		<link rel="stylesheet" href="{{ url_for('static', filename='./css/normalize.css') }}" />
-		<link rel="stylesheet" href="{{ url_for('static', filename='./css/sanitize.css') }}" />
 		<script type="text/javascript" src="{{ url_for('static', filename='./src/base.js') }}"></script>
 		<div class="navbar">
 			<div class="align-center">
@@ -49,6 +49,28 @@
 			</div>
 		</div>
 		{% block content %}{% endblock %}
+		<div class="contact">
+			<h1>Обратная связь</h1>
+			<p>Оставьте заявку, и наши специалисты с вами свяжутся</p>
+			<div class="contact-content-flex">
+				<div class="contact-content">
+					<input type="text" id="fname" name="firstname" placeholder="E-mail">
+					<input type="text" id="fname" name="firstname" placeholder="Имя">
+					<textarea id="subject" name="subject" placeholder="Ваше сообщение" style="height:200px"></textarea>
+					<input type="submit" value="Оставить заявку">
+				</div>
+				<div class="contact-content">
+					<div class="contact-map-flex">
+						<div class="contact-icons-flex">
+							<img src="{{ url_for('static', filename='./img/address.svg') }}" />
+							<img src="{{ url_for('static', filename='./img/tel.svg') }}" />
+							<img src="{{ url_for('static', filename='./img/email.svg') }}" />
+						</div>
+						<img src="{{ url_for('static', filename='./img/map.png') }}" class="contact-map-img"/>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="footer">
 			<div class="footer-content-flex">
 				<div class="footer-content">
