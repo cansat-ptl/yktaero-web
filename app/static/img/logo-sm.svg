@@ -7,9 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="45.58453mm"
+   width="31.58453mm"
    height="31.896847mm"
-   viewBox="0 0 45.584526 31.896847"
+   viewBox="0 0 31.584527 31.896847"
    version="1.1"
    id="svg352"
    inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="150.89288"
-     inkscape:cy="94.834533"
+     inkscape:zoom="5.6"
+     inkscape:cx="42.391368"
+     inkscape:cy="57.63216"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -65,8 +65,8 @@
     <circle
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6761px;line-height:1.25;font-family:'Lucida Sans Unicode';-inkscape-font-specification:'Lucida Sans Unicode';fill:#f2f2f2;fill-opacity:1;stroke:none;stroke-width:0.476382;stroke-miterlimit:4;stroke-dasharray:none"
        id="path1923-1-8-0-1"
-       cx="21.744997"
-       cy="16.607544"
+       cx="14.894179"
+       cy="16.276815"
        inkscape:export-filename="C:\Users\localuser-1\Desktop\path1923.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"
@@ -74,8 +74,8 @@
     <ellipse
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6761px;line-height:1.25;font-family:'Lucida Sans Unicode';-inkscape-font-specification:'Lucida Sans Unicode';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.632811;stroke-miterlimit:4;stroke-dasharray:none"
        id="path1927-63-9-4-0"
-       cx="11.174936"
-       cy="26.774574"
+       cx="5.3399606"
+       cy="23.020262"
        rx="11.120756"
        ry="10.856029"
        transform="matrix(0.86241409,-0.50620346,0.48441681,0.87483733,0,0)"
@@ -85,8 +85,8 @@
     <ellipse
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6761px;line-height:1.25;font-family:'Lucida Sans Unicode';-inkscape-font-specification:'Lucida Sans Unicode';fill:#f2f2f2;fill-opacity:1;stroke:none;stroke-width:0.570131;stroke-miterlimit:4;stroke-dasharray:none"
        id="path1927-6-7-7-4-3"
-       cx="14.06093"
-       cy="27.169989"
+       cx="7.8576965"
+       cy="23.76745"
        rx="10.42522"
        ry="9.7501955"
        transform="matrix(0.89184596,-0.45233924,0.3875016,0.92186903,0,0)"
@@ -96,8 +96,8 @@
     <ellipse
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6761px;line-height:1.25;font-family:'Lucida Sans Unicode';-inkscape-font-specification:'Lucida Sans Unicode';fill:#f2f2f2;fill-opacity:1;stroke:none;stroke-width:0.635913;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="path3099-8-7-6-2"
-       cx="31.550537"
-       cy="-8.3831806"
+       cx="26.953327"
+       cy="-3.0423372"
        rx="7.6169353"
        ry="9.7007475"
        transform="matrix(0.59055848,0.80699484,-0.77439023,0.63270828,0,0)"
@@ -107,8 +107,8 @@
     <ellipse
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6761px;line-height:1.25;font-family:'Lucida Sans Unicode';-inkscape-font-specification:'Lucida Sans Unicode';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.669276;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="path3099-2-1-9-1-7"
-       cx="30.322996"
-       cy="-6.6390033"
+       cx="25.517992"
+       cy="-1.421244"
        rx="8.6534185"
        ry="10.198741"
        transform="matrix(0.61358852,0.78962594,-0.7479307,0.66377682,0,0)"
@@ -117,7 +117,7 @@
        inkscape:export-ydpi="96" />
     <path
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6761px;line-height:1.25;font-family:'Lucida Sans Unicode';-inkscape-font-specification:'Lucida Sans Unicode';fill:#222222;fill-opacity:1;stroke:#f2f2f2;stroke-width:1.31049;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 34.024244,11.178763 22.298019,2.2159579"
+       d="M 27.173426,10.848034 15.447201,1.8852287"
        id="path2945-8-5-3-1-3-1-8"
        inkscape:export-filename="C:\Users\localuser-1\Desktop\path1923.png"
        inkscape:export-xdpi="96"
@@ -126,12 +126,12 @@
     <circle
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6761px;line-height:1.25;font-family:'Lucida Sans Unicode';-inkscape-font-specification:'Lucida Sans Unicode';fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.743255;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path3021-35"
-       cx="31.996092"
-       cy="13.792783"
+       cx="25.145273"
+       cy="13.462053"
        r="3.5754919" />
     <path
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6761px;line-height:1.25;font-family:'Lucida Sans Unicode';-inkscape-font-specification:'Lucida Sans Unicode';fill:#f2f2f2;fill-opacity:1;stroke:#f2f2f2;stroke-width:1.31049;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 31.357691,17.018028 -14.69438,-3.46486"
+       d="M 24.506873,16.687299 9.8124926,13.222439"
        id="path2945-8-5-3-1-3-0"
        inkscape:export-filename="C:\Users\localuser-1\Desktop\path1923.png"
        inkscape:export-xdpi="96"
@@ -139,7 +139,7 @@
        sodipodi:nodetypes="cc" />
     <path
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6761px;line-height:1.25;font-family:'Lucida Sans Unicode';-inkscape-font-specification:'Lucida Sans Unicode';fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.476508;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 31.590322,17.093048 16.663311,13.553168"
+       d="M 24.739504,16.762319 9.8124926,13.222439"
        id="path2941-6-6-1-8"
        inkscape:export-filename="C:\Users\localuser-1\Desktop\path1923.png"
        inkscape:export-xdpi="96"
@@ -147,7 +147,7 @@
        sodipodi:nodetypes="cc" />
     <path
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6761px;line-height:1.25;font-family:'Lucida Sans Unicode';-inkscape-font-specification:'Lucida Sans Unicode';fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.490429;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 34.024244,11.178763 22.298019,2.2159579"
+       d="M 27.173426,10.848034 15.447201,1.8852287"
        id="path2947-2-0-8-2"
        inkscape:export-filename="C:\Users\localuser-1\Desktop\path1923.png"
        inkscape:export-xdpi="96"
@@ -156,8 +156,8 @@
     <ellipse
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6761px;line-height:1.25;font-family:'Lucida Sans Unicode';-inkscape-font-specification:'Lucida Sans Unicode';fill:#222222;fill-opacity:1;stroke:none;stroke-width:0.631349;stroke-miterlimit:4;stroke-dasharray:none"
        id="path2786-7-1-8-1-6"
-       cx="35.710987"
-       cy="16.484329"
+       cx="28.751392"
+       cy="15.853403"
        rx="2.3595979"
        ry="2.4735415"
        transform="matrix(0.99912071,-0.04192628,-0.16270951,0.98667402,0,0)"
@@ -169,8 +169,8 @@
     <ellipse
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6761px;line-height:1.25;font-family:'Lucida Sans Unicode';-inkscape-font-specification:'Lucida Sans Unicode';fill:#222222;fill-opacity:1;stroke:none;stroke-width:0.679187;stroke-miterlimit:4;stroke-dasharray:none"
        id="path2786-5-8-2-1-3"
-       cx="31.881392"
-       cy="26.170404"
+       cx="24.894127"
+       cy="23.306414"
        rx="2.7712812"
        ry="2.4373529"
        transform="matrix(0.93302978,-0.35979915,0.11574506,0.99327895,0,0)"
@@ -180,8 +180,8 @@
     <ellipse
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6761px;line-height:1.25;font-family:'Lucida Sans Unicode';-inkscape-font-specification:'Lucida Sans Unicode';fill:#222222;fill-opacity:1;stroke:none;stroke-width:0.39204;stroke-miterlimit:4;stroke-dasharray:none"
        id="path1947-3-9-1-8-1"
-       cx="32.397877"
-       cy="17.723455"
+       cx="25.492043"
+       cy="16.522778"
        rx="3.0731297"
        ry="3.2152035"
        transform="matrix(0.99203366,-0.12597307,0,1,0,0)"
@@ -190,7 +190,7 @@
        inkscape:export-ydpi="96" />
     <path
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6761px;line-height:1.25;font-family:'Lucida Sans Unicode';-inkscape-font-specification:'Lucida Sans Unicode';fill:#222222;fill-opacity:1;stroke:#f2f2f2;stroke-width:1.31049;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 31.148355,13.317082 15.748343,6.3599565"
+       d="M 24.297537,12.986353 8.8975245,6.0292273"
        id="path2945-8-5-3-1-1"
        inkscape:export-filename="C:\Users\localuser-1\Desktop\path1923.png"
        inkscape:export-xdpi="96"
@@ -198,7 +198,7 @@
        sodipodi:nodetypes="cc" />
     <path
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6761px;line-height:1.25;font-family:'Lucida Sans Unicode';-inkscape-font-specification:'Lucida Sans Unicode';fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.508332px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 31.148355,13.317082 15.748343,6.3599565"
+       d="M 24.297537,12.986353 8.8975245,6.0292273"
        id="path2945-8-5-3-2"
        inkscape:export-filename="C:\Users\localuser-1\Desktop\path1923.png"
        inkscape:export-xdpi="96"
@@ -207,8 +207,8 @@
     <ellipse
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6761px;line-height:1.25;font-family:'Lucida Sans Unicode';-inkscape-font-specification:'Lucida Sans Unicode';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.442357;stroke-miterlimit:4;stroke-dasharray:none"
        id="path1947-1-3-3-7"
-       cx="32.000999"
-       cy="13.784657"
+       cx="25.150181"
+       cy="13.453927"
        rx="3.5189214"
        ry="3.5747778"
        inkscape:export-filename="C:\Users\localuser-1\Desktop\path1923.png"
@@ -217,8 +217,8 @@
     <ellipse
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6761px;line-height:1.25;font-family:'Lucida Sans Unicode';-inkscape-font-specification:'Lucida Sans Unicode';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.699535;stroke-miterlimit:4;stroke-dasharray:none"
        id="path2917-0-4-1-8"
-       cx="19.403393"
-       cy="29.549761"
+       cx="13.786002"
+       cy="25.106653"
        rx="3.1196456"
        ry="2.5598018"
        transform="matrix(0.79404437,-0.6078598,0.53799294,0.84294934,0,0)"
