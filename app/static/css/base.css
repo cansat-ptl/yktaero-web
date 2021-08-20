@@ -484,7 +484,7 @@ input[type=submit]:hover {
 }
 
 /* I have no idea what am i doing */
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 980px) {
 	.navbar a {
 		margin: 0;
 		width: 100%;
