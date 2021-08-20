@@ -1,4 +1,5 @@
 import os, sys
+from flask import send_from_directory
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 sys.path.append(os.path.dirname(basedir))
@@ -44,3 +45,8 @@ def rockets():
 @app.route('/projects/ground-equipment')
 def ground():
     return render_template('projects/ground-equipment.html')
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
