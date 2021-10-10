@@ -6,8 +6,8 @@ class Config(object):
     SECRET_KEY = 'oiutsriupg7fyhjlvd78pg9'
     POSTGRES = {
         'user': 'postgres',
-        'pw': '',
-        'db': 'test',
+        'pw': '96007601root',
+        'db': 'yktaero',
         'host': 'localhost',
         'port': '5432',
     }

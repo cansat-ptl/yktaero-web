@@ -4,26 +4,26 @@
 		<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="{{ url_for('static', filename='./css/normalize.css') }}" />
-		<link rel="stylesheet" href="{{ url_for('static', filename='./css/sanitize.css') }}" />
-		<link rel="stylesheet" href="{{ url_for('static', filename='./css/base.css') }}" />
-		<link rel="stylesheet" href="{{ url_for('static', filename='./css/icons.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/sanitize.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/icons.css') }}" />
 		<title>{% block title %}{% endblock %} - Якутские Аэрокосмические Системы</title>
 		<style>
 			.header-background-image {
-				background-image: url("{{ url_for('static', filename='./img/bkg.jpg') }}");
+				background-image: url("{{ url_for('static', filename='img/bkg.jpg') }}");
 			}
 		</style>
 	</head>
 
 	<body>
-		<script type="text/javascript" src="{{ url_for('static', filename='./src/base.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='src/base.js') }}"></script>
 		<div class="navbar">
 			<div class="align-center">
 				<button class="navbar-logo-btn" onclick="location.href='/'">
-					<img src="{{ url_for('static', filename='./img/logo.svg') }}" class="navbar-logo-img" />
+					<img src="{{ url_for('static', filename='img/logo.svg') }}" class="navbar-logo-img" />
 				</button>
-				<a href="/contacts">Контакты</a>
+				<a href="https://docs.yktaero.space">Документация</a>
 				<a href="/news">Новости</a>
 				<div class="dropdown">
 					<button class="dropdown-btn" onclick="menu_showDropdown(this, 'about-dropdown')">
@@ -33,6 +33,7 @@
 					<div class="dropdown-content" id="about-dropdown">
 						<a href="/about/staff">Сотрудники</a>
 						<a href="/about/partners">Партнеры</a>
+						<a href="/about/contacts">Контакты</a>
 					</div>
 				</div>
 				<div class="dropdown">
@@ -55,19 +56,21 @@
 			<p>Оставьте заявку, и наши специалисты с вами свяжутся</p>
 			<div class="contact-content-flex">
 				<div class="contact-content">
-					<input type="text" id="fname" name="firstname" placeholder="E-mail">
-					<input type="text" id="fname" name="firstname" placeholder="Имя">
-					<textarea id="subject" name="subject" placeholder="Ваше сообщение" style="height:200px"></textarea>
-					<input type="submit" value="Оставить заявку">
+					<form action="/feedback?" method="POST">
+						<input type="text" id="fname" name="firstname" placeholder="E-mail">
+						<input type="text" id="fname" name="firstname" placeholder="Имя">
+						<textarea id="subject" name="subject" placeholder="Ваше сообщение" style="height:200px"></textarea>
+						<input type="submit" value="Оставить заявку">
+					</form>
 				</div>
 				<div class="contact-content">
 					<div class="contact-map-flex">
 						<div class="contact-icons-flex">
-							<img src="{{ url_for('static', filename='./img/address.svg') }}" />
-							<img src="{{ url_for('static', filename='./img/tel.svg') }}" />
-							<img src="{{ url_for('static', filename='./img/email.svg') }}" />
+							<img src="{{ url_for('static', filename='img/address.svg') }}" />
+							<img src="{{ url_for('static', filename='img/tel.svg') }}" />
+							<img src="{{ url_for('static', filename='img/email.svg') }}" />
 						</div>
-						<img src="{{ url_for('static', filename='./img/map.png') }}" class="contact-map-img"/>
+						<img src="{{ url_for('static', filename='img/map.png') }}" class="contact-map-img"/>
 					</div>
 				</div>
 			</div>

@@ -66,12 +66,21 @@ body {
 	margin: 16px 0px;
 }
 
+.subh1 {
+	font-size: 18px;
+	text-align: center;
+}
+
+hr {
+	border: 1px solid #dcdcdc;
+}
+
 /* ================================================ *
  *                  Header styles                   * 
  * ================================================ */
 
 .header {
-	background: var(--color-blue-1);
+	background: black;
 	padding: 80px;
 	padding-top: 160px;
 	padding-bottom: 160px;
@@ -107,8 +116,37 @@ body {
 	height: 100%;
 }
 
+.header-sm {
+	background: black;
+	padding: 60px;
+	text-align: center;
+	color: white;
+}
+
+.header-sm h1 {
+	font-size: 32px;
+	margin: 12px;
+	text-align: none;
+}
+
+.header-sm p{
+	color: var(--color-gray-4);
+}
+
+.header-background-image {
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	height: 100%;
+}
+
 h1 {
 	font-size: 2em;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1.5em;
 	text-align: center;
 }
 
@@ -146,6 +184,10 @@ h1 {
 
 .footer a {
 	color: white;
+}
+
+.footer h2 {
+	text-align: left;
 }
 
 /* ================================================ *
@@ -339,7 +381,7 @@ h1 {
  * ================================================ */
 
 ul.breadcrumb {
-	padding: 10px 16px;
+	padding: 0px 16px;
 	list-style: none;
 }
 
@@ -380,6 +422,13 @@ ul.breadcrumb li a:hover {
 	appearance: button;
 }
 
+.button-nobg {
+	border-radius: 2px;
+	padding: 12px 20px;
+	text-align: center;
+	color: var(--color-blue-2);
+}
+
 .button-large {
 	padding: 20px 32px;
 	font-size: 18px;
@@ -387,6 +436,10 @@ ul.breadcrumb li a:hover {
 
 .button:active {
 	background-color: var(--color-blue-2);
+}
+
+a {
+	color: var(--color-blue-2);
 }
 
 /* ================================================ *
@@ -430,7 +483,7 @@ input[type=submit]:hover {
 }
 
 .card-header {
-	margin: 16px 0px 0px 8px;
+	margin: 16px 0px 0px 0px;
 	padding: 0px 16px;
 	text-align: center;
 	line-height: 28px;
@@ -529,7 +582,15 @@ input[type=submit]:hover {
 		padding: 20px;
 	}
 
+	.header-sm {
+		padding: 20px;
+	}
+
 	.header h1 {
+		font-size: 20px;
+	}
+
+	.header-sm h1 {
 		font-size: 20px;
 	}
 

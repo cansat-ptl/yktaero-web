@@ -1,5 +1,6 @@
 import os, sys
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
 version_string = "v0.0.1-dev"
 
@@ -10,5 +11,7 @@ from config import CurrentConfig
 
 app = Flask(__name__)
 app.config.from_object(CurrentConfig)
+db = SQLAlchemy(app)
 
-from app import pages
+from app import pages, models
+
