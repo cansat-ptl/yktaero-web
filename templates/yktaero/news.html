@@ -1,3 +1,31 @@
-{% extends "yktaero/base.html" %} {% block title %}Главная{% endblock %} {% block content %}
-<h1>Тут пока ничего нет</h1>
+{% extends "yktaero/base.html" %} {% block title %}Новости{% endblock %} 
+{% block content %}
+<link rel="stylesheet" href="{{ static('yktaero/./css/projectcards.css') }}" />
+<div class="header-sm header-background-image">
+	<div class="align-center header-background-text">
+		<h1>Новости</h1>
+		<ul class="breadcrumb">
+			<li><a href="/">Главная</a></li>
+			<li><a href="/news">Новости</a></li>
+		</ul>
+	</div>
+</div>
+<div class="container">
+	<h1>Все новости</h1>
+	{% for post in posts %}
+        <div class="project-card">
+			<img src="{{ static(post.preview_image) }}" class="card-image card-image-even" />
+			<div class="card-content">
+				<div class="card-header">{{ post.title }}</div>
+				<div class="card-subtitle">{{ post.updated }}</div>
+				<div class="card-text">
+					{{ post.preview_text }}
+				</div>
+				<div class="card-bottomlinks">
+					<a href="{{ url('blog-post', kwargs={'slug': post.slug}) }}" class="button">Читать далее</a>
+				</div>
+			</div>
+		</div>
+    {% endfor %}
+</div>
 {% endblock %}
