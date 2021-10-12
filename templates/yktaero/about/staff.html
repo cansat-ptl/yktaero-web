@@ -1,0 +1,99 @@
+{% extends "base.html" %} {% block title %}Сотрудники{% endblock %} {% block content %}
+
+<style>
+	.card-avatar {
+		padding: 16px;
+	}
+	.card-avatar img {
+		border-radius: 50%; 
+		width: 100%;
+	}
+</style>
+
+<div class="header-sm header-background-image">
+	<div class="align-center header-background-text">
+		<h1>Сотрудники</h1>
+		<ul class="breadcrumb">
+			<li><a href="/">Главная</a></li>
+			<li><a href="/about">О нас</a></li>
+			<li><a href="/about/staff">Сотрудники</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="container">
+	<h1>Разработчики</h1>
+	<div class="container-flex flex-row">
+		<div class="card">
+			<div class="card-avatar">
+				<img src="{{ url_for('static', filename='./img/staff/antonovau.jpg') }}"/>
+			</div>
+			<div class="card-header">Анатолий Антонов</div>
+			<div class="card-text">
+				Разработчик наземного ПО
+				<br><br>
+				<b>E-mail:</b> <a href="mailto:illarionov.ta@yktaero.space">antonov@yktaero.space</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-avatar">
+				<img src="{{ url_for('static', filename='./img/staff/ivanovka.jpg') }}"/>
+			</div>
+			<div class="card-header">Карл Иванов</div>
+			<div class="card-text">
+				Рарзаботчик бортового ПО
+				<br><br>
+				<b>E-mail:</b> <a href="mailto:ivanov.ka@yktaero.space">ivanov.ka@yktaero.space</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-avatar">
+				<img src="{{ url_for('static', filename='./img/staff/petrovan.jpg') }}"/>
+			</div>
+			<div class="card-header">Андрей Петров</div>
+			<div class="card-text">
+				Рарзаботчик бортового ПО, инженер-электронщик
+				<br><br>
+				<b>E-mail:</b> <a href="mailto:a.petrov@yktaero.space">a.petrov@yktaero.space</a>
+			</div>
+		</div>
+	</div>
+	<h1>Инженеры</h1>
+	<div class="container-flex flex-row">
+		<div class="card">
+			<div class="card-avatar">
+				<img src="{{ url_for('static', filename='./img/staff/afanasyevaa.jpg') }}"/>
+			</div>
+			<div class="card-header">Айсен Афанасьев</div>
+			<div class="card-text">
+				Инженер-конструктор
+				<br><br>
+				<b>E-mail:</b> <a href="mailto:a.afanasyev@yktaero.space">a.afanasyev@yktaero.space</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-avatar">
+				<img src="{{ url_for('static', filename='./img/staff/illarionovta.jpg') }}"/>
+			</div>
+			<div class="card-header">Тимур Илларионов</div>
+			<div class="card-text">
+				Инженер-конструктор, генеральный директор
+				<br><br>
+				<b>E-mail:</b> <a href="mailto:illarionov.ta@yktaero.space">illarionov.ta@yktaero.space</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-avatar">
+				<img src="{{ url_for('static', filename='./img/staff/petrovog.jpg') }}"/>
+			</div>
+			<div class="card-header">Олег Петров</div>
+			<div class="card-text">
+				Специалист по математическому моделированию
+				<br><br>
+				<b>E-mail:</b> <a href="mailto:ogpetrov@yktaero.space">ogpetrov@yktaero.space</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
