@@ -46,6 +46,7 @@ def ground(request):
 
 class IndexView(ListView):
 
+    paginate_by = 3
     template_name = 'yktaero/index.html'
     model = Post
     allow_empty = False
@@ -56,6 +57,7 @@ class IndexView(ListView):
 
 class NewsView(ListView):
 
+    paginate_by = 10
     template_name = 'yktaero/news.html'
     model = Post
     allow_empty = False
