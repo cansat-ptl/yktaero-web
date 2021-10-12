@@ -1,5 +1,5 @@
-{% extends "base.html" %} {% block title %}Главная{% endblock %} {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/projectcards.css') }}" />
+{% extends "yktaero/base.html" %} {% block title %}Главная{% endblock %} {% block content %}
+<link rel="stylesheet" href="{{ static('yktaero/css/projectcards.css') }}" />
 
 <div class="header header-background-image">
 	<div class="align-center header-background-text">
@@ -17,7 +17,7 @@
 	<h1 class="align-center" style="margin-top: 16px">Проекты</h1>
 	<div class="container-flex flex-col">
 		<div class="project-card">
-			<img src="{{ url_for('static', filename='img/cubesat1.jpg') }}" class="card-image card-image-odd" />
+			<img src="{{ static('yktaero/img/cubesat1.jpg') }}" class="card-image card-image-odd" />
 			<div class="card-content">
 				<div class="card-header">Спутниковая платформа YKTSAT-1U</div>
 				<div class="card-text">
@@ -31,7 +31,7 @@
 			</div>
 		</div>
 		<div class="project-card">
-			<img src="{{ url_for('static', filename='img/payload1.jpg') }}" class="card-image card-image-even" />
+			<img src="{{ static('yktaero/img/payload1.jpg') }}" class="card-image card-image-even" />
 			<div class="card-content">
 				<div class="card-header">Полезные нагрузки для МКА</div>
 				<div class="card-text">
@@ -45,7 +45,7 @@
 			</div>
 		</div>
 		<div class="project-card">
-			<img src="{{ url_for('static', filename='img/ground1.jpg') }}" class="card-image card-image-odd" />
+			<img src="{{ static('yktaero/img/ground1.jpg') }}" class="card-image card-image-odd" />
 			<div class="card-content">
 				<div class="card-header">Наземное оборудование</div>
 				<div class="card-text">
@@ -61,41 +61,41 @@
 	<div class="container-flex flex-row">
 		<!--
 		<div class="card">
-			<img src="{{ url_for('static', filename='./img/test.jpg') }}" class="card-image" />
+			<img src="{{ static('yktaero/./img/test.jpg') }}" class="card-image" />
 			<div class="card-header">Сайт работает</div>
 			<div class="card-text">1234</div>
 			<a href="#" class="button">Читать далее</a>
 		</div>
 		<div class="card">
-			<img src="{{ url_for('static', filename='./img/test.jpg') }}" class="card-image" />
+			<img src="{{ static('yktaero/./img/test.jpg') }}" class="card-image" />
 			<div class="card-header">Резиденство в Технопарке «Якутия»</div>
 			<div class="card-text">С 9 июня 2021 года ООО «Якутские Аэрокосмические Системы» является резидентом ГАУ
 				РС(Я) «Технопарк Якутия»</div>
 			<a href="#" class="button">Читать далее</a>
 		</div>
 		<div class="card">
-			<img src="{{ url_for('static', filename='./img/test.jpg') }}" class="card-image" />
+			<img src="{{ static('yktaero/./img/test.jpg') }}" class="card-image" />
 			<div class="card-header">Грант УМНИК-2020</div>
 			<div class="card-text">
 				С 25 по 27 мая состоялся полуфинал конкурса «УМНИК-2020» Фонда содействия инновациям.
 			</div>
 			<a href="#" class="button">Читать далее</a>
 		</div>-->
-		{% for article in news %}
+		<!--{% for article in news %}
 		<div class="card">
-			<img src="{{ url_for('static', filename='img/news/'+article['image']) }}" class="card-image" />
+			<img src="{{ static('yktaero/img/news/'+article['image']) }}" class="card-image" />
 			<div class="card-header">{{ article['title'] }}</div>
 			<div class="card-text">{{ article['text'] }}</div>
 			<a href="/news/{{ article['link'] }}" class="button">Читать далее</a>
 		</div>
-		{% endfor %}
+		{% endfor %}-->
 	</div>
 	<div class="spacer news-button" style="text-align: center">
 		<a href="/news" class="button button-large">Все новости</a>
 	</div>
 	<div class="about-org">
 		<div class="project-card">
-			<img src="{{ url_for('static', filename='img/about.jpg') }}" class="card-image card-image-odd" />
+			<img src="{{ static('yktaero/img/about.jpg') }}" class="card-image card-image-odd" />
 			<div class="card-content">
 				<div class="card-header">О компании</div>
 				<div class="card-text">

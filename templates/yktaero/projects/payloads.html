@@ -1,5 +1,5 @@
-{% extends "base.html" %} {% block title %}Полезные нагрузки{% endblock %} {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='./css/projectcards.css') }}" />
+{% extends "yktaero/base.html" %} {% block title %}Полезные нагрузки{% endblock %} {% block content %}
+<link rel="stylesheet" href="{{ static('yktaero/./css/projectcards.css') }}" />
 <div class="header-sm header-background-image">
 	<div class="align-center header-background-text">
 		<h1>Полезные нагрузки</h1>
@@ -19,7 +19,7 @@
 	<h2>Доступные модули</h2>
 	<div class="container-flex flex-col">
 		<div class="project-card">
-			<img src="{{ url_for('static', filename='./img/payload1.jpg') }}" class="card-image card-image-even" />
+			<img src="{{ static('yktaero/./img/payload1.jpg') }}" class="card-image card-image-even" />
 			<div class="card-content">
 				<div class="card-header">Модуль ПН YktSat EDU-16</div>
 				<div class="card-subtitle">YKTS-PL-EDU16-BASE</div>
@@ -35,7 +35,7 @@
 			</div>
 		</div>
 		<div class="project-card">
-			<img src="{{ url_for('static', filename='./img/payload1.jpg') }}" class="card-image card-image-even" />
+			<img src="{{ static('yktaero/./img/payload1.jpg') }}" class="card-image card-image-even" />
 			<div class="card-content">
 				<div class="card-header">Модуль ПН YktSat EDU-16 PC/104</div>
 				<div class="card-subtitle">YKTS-PL-EDU16-SPTX</div>

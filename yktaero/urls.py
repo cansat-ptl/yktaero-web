@@ -21,5 +21,13 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('news', views.news, name='news'),
+    path('about/contacts', views.contacts, name='about/contacts'),
+    path('about/staff', views.staff, name='about/staff'),
+    path('about/partners', views.partners, name='about/partners'),
+    path('projects/payloads', views.payloads, name='projects/payloads'),
+    path('projects/yktsat', views.yktsat, name='projects/yktsat'),
+    path('projects/sounding-rockets', views.rockets, name='projects/sounding-rockets'),
+    path('projects/ground-equipment', views.ground, name='projects/ground-equipment'),
     path('admin/', admin.site.urls),
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
