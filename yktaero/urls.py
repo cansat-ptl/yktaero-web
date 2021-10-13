@@ -23,8 +23,8 @@ from .models import Post, Tag
 
 urlpatterns = [
     path('',
-                 IndexView.as_view(),
-                 name='index'),
+        IndexView.as_view(),
+        name='index'),
     path('about/contacts', views.contacts, name='about/contacts'),
     path('about/staff', views.staff, name='about/staff'),
     path('about/partners', views.partners, name='about/partners'),
@@ -36,13 +36,13 @@ urlpatterns = [
          name='projects/ground-equipment'),
     path('admin/', admin.site.urls),
     path('news',
-                 NewsView.as_view(),
-                 name='blog-index'),
+        NewsView.as_view(),
+        name='blog-index'),
     path('post/<slug:slug>',
-                 PostView.as_view(),
-                 name='blog-post'),
+        PostView.as_view(),
+        name='blog-post'),
     path('tag/<slug:tag>.html',
-                 TagView.as_view(),
-                 name='blog-tag'),
+        TagView.as_view(),
+        name='blog-tag'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

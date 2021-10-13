@@ -54,6 +54,11 @@ class IndexView(ListView):
     ordering = '-created'
     context_object_name = 'posts'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        NewsView.queryset = Post.objects.latest()
+        return context
+
 
 class NewsView(ListView):
 
@@ -64,6 +69,11 @@ class NewsView(ListView):
     queryset = Post.objects.published()
     ordering = '-created'
     context_object_name = 'posts'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        NewsView.queryset = Post.objects.published()
+        return context
 
 
 class PostView(DetailView):
