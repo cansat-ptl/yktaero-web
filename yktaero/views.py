@@ -49,7 +49,7 @@ class IndexView(ListView):
     paginate_by = 3
     template_name = 'yktaero/index.html'
     model = Post
-    allow_empty = False
+    allow_empty = True
     queryset = Post.objects.latest()
     ordering = '-created'
     context_object_name = 'posts'

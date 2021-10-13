@@ -16,6 +16,12 @@
 	.button .news-tag {
 		margin: 8px;
 	}
+	.news-flex-content .button-nobg {
+		padding: 0px 1em;
+	}
+	.news-flex-content .project-card {
+		align-items: flex-start;
+	}
 </style>
 <div class="header-sm header-background-image">
 	<div class="align-center header-background-text">
@@ -40,7 +46,12 @@
 					<img src="{{ static(post.preview_image) }}" class="news-img card-image-odd" />
 					<div class="card-content">
 						<div class="card-header">{{ post.title }}</div>
-						<div class="card-subtitle">Опубликовано: <time>{{ post.updated }}</time></div>
+						<div class="card-subtitle" style="font-size: inherit;">Опубликовано: <time>{{ post.updated }}</time></div>
+						<div class="card-subtitle" style="font-size: inherit;">Теги:
+							{% for tag in post.tags.all() %}
+								<a class="" href="{{ url('blog-tag', kwargs={'tag': tag.name}) }}">{{ tag.name }}</a>
+							{% endfor %}
+						</div>
 						<div class="card-text">
 							{{ post.preview_text }}
 						</div>
@@ -50,29 +61,31 @@
 					</div>
 				</div>
 			{% endfor %}
-			{% if page_obj.has_other_pages %}
-				<div class="pagination">
-					{% if page_obj.has_previous == 1 %}
-						<a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
-					{% else %}
-						<a class="disabled">&laquo;</a>
-					{% endif %}
-					{% for i in page_obj.paginator.page_range %}
-						{% if page_obj.number == i %}
-							<a class="active">{{ i }}</a>
+			<div style="margin-top: 20px;">
+				{% if page_obj.has_other_pages %}
+					<div class="pagination">
+						{% if page_obj.has_previous == 1 %}
+							<a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
 						{% else %}
-							{% if page_obj.number <= 10 %}
-								<a href="?page={{ i }}">{{ i }}</a>
-							{% endif %}
+							<a class="disabled">&laquo;</a>
 						{% endif %}
-					{% endfor %}
-					{% if page_obj.has_next == 1 %}
-						<a href="?page={{ page_obj.next_page_number }}">&raquo;</a>
-					{% else %}
-						<a class="disabled">&raquo;</a>
-					{% endif %}
-				</div>			
-			{% endif %}
+						{% for i in page_obj.paginator.page_range %}
+							{% if page_obj.number == i %}
+								<a class="active">{{ i }}</a>
+							{% else %}
+								{% if page_obj.number <= 10 %}
+									<a href="?page={{ i }}">{{ i }}</a>
+								{% endif %}
+							{% endif %}
+						{% endfor %}
+						{% if page_obj.has_next == 1 %}
+							<a href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+						{% else %}
+							<a class="disabled">&raquo;</a>
+						{% endif %}
+					</div>			
+				{% endif %}
+			</div>
 		</div>
 	</div>
 </div>
