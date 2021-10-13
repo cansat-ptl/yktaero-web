@@ -417,9 +417,6 @@ ul.breadcrumb li a:hover {
 	text-align: center;
 	text-decoration: none;
 	color: white;
-	-webkit-appearance: button;
-	-moz-appearance: button;
-	appearance: button;
 }
 
 .button-nobg {
