@@ -594,7 +594,7 @@ input[type=submit]:hover {
 		font-size: 20px;
 	}
 
-	.main-container-flex-row {
+	.flex-row {
 		flex-direction: column;
 	}
 
