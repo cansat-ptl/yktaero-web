@@ -7,12 +7,11 @@ class PostManager(models.Manager):
 
 	def published(self):
 		now = timezone.now()
-		return self.filter(Q(publish_date__lte=now) | Q(publish_date=None))
+		return self.filter(Q(publish_date__lte=now) | Q(publish_date=None)).order_by("-created")
 
 	def latest(self):
 		now = timezone.now()
-		return self.filter(Q(publish_date__lte=now) | Q(publish_date=None))
-
+		return self.filter(Q(publish_date__lte=now) | Q(publish_date=None)).order_by("-created")[:3]
 
 class Tag(models.Model):
 

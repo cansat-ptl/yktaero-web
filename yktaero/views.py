@@ -6,11 +6,6 @@ from .models import Post, Tag
 
 # Function based views for static html pages
 
-def index(request):
-    posts = []
-    return render(request, 'yktaero/index.html', {'posts': posts})
-
-
 def news(request):
     return render(request, 'yktaero/news.html')
 
@@ -46,12 +41,11 @@ def ground(request):
 
 class IndexView(ListView):
 
-    paginate_by = 3
     template_name = 'yktaero/index.html'
     model = Post
     allow_empty = True
     queryset = Post.objects.latest()
-    ordering = '-created'
+    ordering = None
     context_object_name = 'posts'
 
     def get_context_data(self, **kwargs):
@@ -67,7 +61,7 @@ class NewsView(ListView):
     model = Post
     allow_empty = True
     queryset = Post.objects.published()
-    ordering = '-created'
+    ordering = None
     context_object_name = 'posts'
 
     def get_context_data(self, **kwargs):
