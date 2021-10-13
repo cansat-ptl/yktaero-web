@@ -60,7 +60,7 @@ class NewsView(ListView):
     paginate_by = 10
     template_name = 'yktaero/news.html'
     model = Post
-    allow_empty = False
+    allow_empty = True
     queryset = Post.objects.published()
     ordering = '-created'
     context_object_name = 'posts'
