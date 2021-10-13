@@ -44,13 +44,13 @@ class IndexView(ListView):
     template_name = 'yktaero/index.html'
     model = Post
     allow_empty = True
-    queryset = Post.objects.latest()
+    queryset = Post.objects.published()[:3]
     ordering = None
     context_object_name = 'posts'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        NewsView.queryset = Post.objects.latest()
+        IndexView.queryset = Post.objects.published()[:3]
         return context
 
 
