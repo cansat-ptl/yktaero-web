@@ -82,8 +82,13 @@
 			<a href="#" class="button">Читать далее</a>
 		</div>-->
 		{% for post in posts %}
+		
 		<div class="card">
-			<img src="{{ static(post.preview_image) }}" class="card-image" />
+			{% if post.preview_image|length %}
+				<img src="{{ static(post.preview_image) }}" class="card-image" />
+			{% else %}
+				<img src="{{ post.preview_image_external }}" class="card-image" />
+			{% endif %}
 			<div class="card-header">{{ post.title }}</div>
 			<div class="card-text">{{ post.preview_text }}</div>
 			<a href="{{ url('blog-post', kwargs={'slug': post.slug}) }}" class="button">Читать далее</a>

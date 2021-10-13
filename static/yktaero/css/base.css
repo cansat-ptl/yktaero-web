@@ -443,6 +443,7 @@ a {
 /* ================================================ *
  *                   Input styles                   * 
  * ================================================ */
+
  input[type=text], select, textarea {
 	padding: 16px;
 	border-radius: 2px;
@@ -498,10 +499,34 @@ input[type=submit]:hover {
 .card-image {
 	border-radius: 5px 5px 0 0;
 	width: 100%;
+	height: 100%;
 }
 
 .card .button {
 	margin-top: 8px;
+}
+
+/* ================================================ *
+ *                    Pagination                    * 
+ * ================================================ */
+ 
+.pagination a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+.pagination a.active {
+	background-color: var(--color-blue-1);
+	color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+a.disabled {
+	pointer-events: none;
+	cursor: default;
 }
 
 /* ================================================ *
@@ -605,24 +630,4 @@ input[type=submit]:hover {
 	.contact {
 		display: none;
 	}
-}
-
-
-.pagination a {
-	color: black;
-	float: left;
-	padding: 8px 16px;
-	text-decoration: none;
-}
-
-.pagination a.active {
-	background-color: var(--color-blue-1);
-	color: white;
-}
-
-.pagination a:hover:not(.active) {background-color: #ddd;}
-
-a.disabled {
-	pointer-events: none;
-	cursor: default;
 }

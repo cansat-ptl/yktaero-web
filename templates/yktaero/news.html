@@ -4,6 +4,7 @@
 <style>
 	.news-img {
 		width: 30%;
+		height: 300%;
 		min-width: 100px;
 		border-radius: 5px;
 	}
@@ -64,7 +65,11 @@
 		<div class="news-flex-content">
 			{% for post in page_obj %}
 				<div class="project-card">
-					<img src="{{ static(post.preview_image) }}" class="news-img card-image-odd" />
+					{% if post.preview_image|length %}
+						<img src="{{ static(post.preview_image) }}" class="news-img card-image-odd" />
+					{% else %}
+						<img src="{{ post.preview_image_external }}" class="news-img card-image-odd" />
+					{% endif %}
 					<div class="card-content">
 						<div class="card-header">{{ post.title }}</div>
 						<div class="card-subtitle" style="font-size: inherit;">Опубликовано: <time>{{ post.updated }}</time></div>

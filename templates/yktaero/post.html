@@ -11,7 +11,11 @@
 </div>
 <div class="container">
 	<h1>{{ post.title }}</h1>
-	<img src="{{ static(post.preview_image) }}" class="card-image card-image-even" />
+	{% if post.preview_image|length %}
+		<img src="{{ static(post.preview_image) }}" />
+	{% else %}
+		<img src="{{ post.preview_image_external }}"/>
+	{% endif %}
 	<h3>{{ post.updated }}</h3>
 	<p>
 		{{ post.content|safe }}

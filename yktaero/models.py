@@ -54,6 +54,10 @@ class Post(models.Model):
 		help_text='URL of the preview image',
 		blank=True,
 	)
+	preview_image_external = models.TextField(
+		help_text='URL of the preview image (external sites)',
+		blank=True,
+	)
 	preview_text = models.TextField(
 		help_text='Short preview text',
 	)
