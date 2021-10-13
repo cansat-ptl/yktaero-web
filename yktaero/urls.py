@@ -17,32 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from django_distill import distill_path
 from . import views
 from .views import IndexView, PostView, TagView, NewsView 
 from .models import Post, Tag
 
-
-def get_index():
-    return None
-
-
-def get_posts():
-    for post in Post.objects.published():
-        yield {'slug': post.slug}
-
-
-def get_tags():
-    for tag in Tag.objects.all():
-        yield {'tag': tag.name}
-
-
 urlpatterns = [
-    distill_path('',
+    path('',
                  IndexView.as_view(),
-                 name='index',
-                 distill_func=get_index,
-                 distill_file='yktaero/index.html'),
+                 name='index'),
     path('about/contacts', views.contacts, name='about/contacts'),
     path('about/staff', views.staff, name='about/staff'),
     path('about/partners', views.partners, name='about/partners'),
@@ -53,18 +35,14 @@ urlpatterns = [
     path('projects/ground-equipment', views.ground,
          name='projects/ground-equipment'),
     path('admin/', admin.site.urls),
-    distill_path('news',
+    path('news',
                  NewsView.as_view(),
-                 name='blog-index',
-                 distill_func=get_index,
-                 distill_file='yktaero/news.html'),
-    distill_path('post/<slug:slug>.html',
+                 name='blog-index'),
+    path('post/<slug:slug>',
                  PostView.as_view(),
-                 name='blog-post',
-                 distill_func=get_posts),
-    distill_path('tag/<slug:tag>.html',
+                 name='blog-post'),
+    path('tag/<slug:tag>.html',
                  TagView.as_view(),
-                 name='blog-tag',
-                 distill_func=get_tags),
+                 name='blog-tag'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
