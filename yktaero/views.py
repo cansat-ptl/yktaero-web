@@ -37,6 +37,10 @@ def rockets(request):
 def ground(request):
     return render(request, 'yktaero/projects/ground-equipment.html')
 
+def feedback(request):
+    next = request.POST.get('next', '/')
+    return HttpResponseRedirect(next)
+
 # Class-based views for django-distill blog
 
 class IndexView(ListView):

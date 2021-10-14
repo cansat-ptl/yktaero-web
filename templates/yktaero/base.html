@@ -59,6 +59,7 @@
 					<form action="/feedback?" method="POST">
 						<input type="text" id="fname" name="firstname" placeholder="E-mail">
 						<input type="text" id="fname" name="firstname" placeholder="Имя">
+						<input type="hidden" name="next" value="{{ request.path }}">
 						<textarea id="subject" name="subject" placeholder="Ваше сообщение" style="height:200px"></textarea>
 						<input type="submit" value="Оставить заявку">
 					</form>
