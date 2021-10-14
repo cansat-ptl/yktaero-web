@@ -1,50 +1,7 @@
 {% extends "yktaero/base.html" %} {% block title %}Новости{% endblock %} 
 {% block content %}
 <link rel="stylesheet" href="{{ static('yktaero/./css/projectcards.css') }}" />
-<style>
-	.news-img {
-		width: 30%;
-		height: 300%;
-		min-width: 100px;
-		border-radius: 5px;
-	}
-	.news-flex-tags {
-		width: 20%;
-	}
-	.news-flex-content {
-		width: 80%;
-	}
-	.button .news-tag {
-		margin: 8px;
-	}
-	.news-flex-content .button-nobg {
-		padding: 0px 1em;
-	}
-	.news-flex-content .project-card {
-		align-items: flex-start;
-	}
-
-	@media screen and (max-width: 980px) {
-		.news-img {
-			width: 100%;
-			min-width: 100px;
-			border-radius: 5px;
-		}
-		.news-flex-content .project-card {
-			align-items: center;
-		}
-		.news-flex-content .card-bottomlinks {
-			align-items: center;
-			width: auto;
-		}
-		.news-flex-tags {
-			width: 100%;
-		}
-		.news-flex-content {
-			width: 100%;
-		}
-	}
-</style>
+<link rel="stylesheet" href="{{ static('yktaero/./css/news.css') }}" />
 <div class="header-sm header-background-image">
 	<div class="align-center header-background-text">
 		<h1>Новости</h1>

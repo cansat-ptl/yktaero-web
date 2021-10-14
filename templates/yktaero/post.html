@@ -1,4 +1,5 @@
 {% extends "yktaero/base.html" %} {% block title %}Новости{% endblock %} {% block content %}
+<link rel="stylesheet" href="{{ static('yktaero/./css/news.css') }}" />
 <div class="header-sm header-background-image">
 	<div class="align-center header-background-text">
 		<h1>Новости</h1>
@@ -10,15 +11,25 @@
 	</div>
 </div>
 <div class="container">
-	<h1>{{ post.title }}</h1>
-	{% if post.preview_image|length %}
-		<img src="{{ static(post.preview_image) }}" />
-	{% else %}
-		<img src="{{ post.preview_image_external }}"/>
-	{% endif %}
-	<h3>{{ post.updated }}</h3>
-	<p>
-		{{ post.content|safe }}
-	</p>
+	<div class="align-center"> 
+		<div class="news-post-info"> 
+			<div class="news-post-date">Опубликовано: {{ post.updated }}</div>
+			<div>
+				<span class="news-post-date">Теги:</span>
+				{% for tag in post.tags.all() %}
+					<a href="{{ url('blog-tag', kwargs={'tag': tag.name}) }}">{{ tag.name }}</a>
+				{% endfor %}
+			</div>
+		</div>
+		<h1>{{ post.title }}</h1>
+		<p>
+			{{ post.content|safe }}
+		</p>
+		{% if post.preview_image|length %}
+			<img src="{{ static(post.preview_image) }}" style="width: 100%; border-radius: 5px;" />
+		{% else %}
+			<img src="{{ post.preview_image_external }}" style="width: 100%; border-radius: 5px;"/>
+		{% endif %}
+	</div>
 </div>
 {% endblock %}
