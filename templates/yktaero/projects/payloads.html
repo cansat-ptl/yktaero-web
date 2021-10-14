@@ -1,0 +1,55 @@
+{% extends "yktaero/base.html" %} {% block title %}Полезные нагрузки{% endblock %} {% block content %}
+<link rel="stylesheet" href="{{ static('yktaero/./css/projectcards.css') }}" />
+<div class="header-sm header-background-image">
+	<div class="align-center header-background-text">
+		<h1>Полезные нагрузки</h1>
+		<ul class="breadcrumb">
+			<li><a href="/">Главная</a></li>
+			<li><a href="">Проекты</a></li>
+			<li><a href="/projects/payloads">Полезные нагрузки для МКА</a></li>
+		</ul>
+	</div>
+</div>
+<div class="container">
+	<p class="subh1"><b>Полезные нагрузки для МКА</b> - модули, предназначенные для интеграции со спутниковой платформой.
+		Полезная нагрузка обеспечивает выполнение космическим аппаратом практических задач, таких как
+		проведение исследований или тестирование электронных компонентов. Все модули совместимы с платформой YKTSAT, а
+		также со стандартом PC/104, что позволяет
+		использовать их с КА других производителей.</p><hr>
+	<h2>Доступные модули</h2>
+	<div class="container-flex flex-col">
+		<div class="project-card">
+			<img src="{{ static('yktaero/./img/payload1.jpg') }}" class="card-image card-image-even" />
+			<div class="card-content">
+				<div class="card-header">Модуль ПН YktSat EDU-16</div>
+				<div class="card-subtitle">YKTS-PL-EDU16-BASE</div>
+				<div class="card-text">
+					Модуль ПН YktSat EDU-16 - плата с 16 микроконтроллерами ATmega328PB и супервизором. Позволяет
+					удаленно загружать пользовательские прошивки на каждый из микроконтроллеров. <br><br>
+					Версия для платформы YKTSAT-1U.
+				</div>
+				<div class="card-bottomlinks">
+					<a href="/projects/payloads" class="button">Подробнее</a>
+					<a href="/projects/payloads" class="button-nobg">Техническая документация</a>
+				</div>
+			</div>
+		</div>
+		<div class="project-card">
+			<img src="{{ static('yktaero/./img/payload1.jpg') }}" class="card-image card-image-even" />
+			<div class="card-content">
+				<div class="card-header">Модуль ПН YktSat EDU-16 PC/104</div>
+				<div class="card-subtitle">YKTS-PL-EDU16-SPTX</div>
+				<div class="card-text">
+					Модуль ПН YktSat EDU-16 - плата с 16 микроконтроллерами ATmega328PB и супервизором. Позволяет
+					удаленно загружать пользовательские прошивки на каждый из микроконтроллеров. <br><br>
+					Версия для платформы SPUTNIX Orbicraft-Pro (PC/104).
+				</div>
+				<div class="card-bottomlinks">
+					<a href="/projects/payloads" class="button">Подробнее</a>
+					<a href="/projects/payloads" class="button-nobg">Техническая документация</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

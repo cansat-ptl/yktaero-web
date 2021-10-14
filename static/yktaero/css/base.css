@@ -417,9 +417,7 @@ ul.breadcrumb li a:hover {
 	text-align: center;
 	text-decoration: none;
 	color: white;
-	-webkit-appearance: button;
-	-moz-appearance: button;
-	appearance: button;
+	-webkit-appearance: none;
 }
 
 .button-nobg {
@@ -500,10 +498,34 @@ input[type=submit]:hover {
 .card-image {
 	border-radius: 5px 5px 0 0;
 	width: 100%;
+	height: 100%;
 }
 
 .card .button {
 	margin-top: 8px;
+}
+
+/* ================================================ *
+ *                    Pagination                    * 
+ * ================================================ */
+ 
+.pagination a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+.pagination a.active {
+	background-color: var(--color-blue-1);
+	color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+a.disabled {
+	pointer-events: none;
+	cursor: default;
 }
 
 /* ================================================ *
@@ -594,7 +616,7 @@ input[type=submit]:hover {
 		font-size: 20px;
 	}
 
-	.main-container-flex-row {
+	.flex-row {
 		flex-direction: column;
 	}
 
