@@ -44,5 +44,8 @@ urlpatterns = [
     path('tag/<slug:tag>.html',
         TagView.as_view(),
         name='blog-tag'),
+    path('feedback',
+        views.feedback,
+        name='feedback'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
