@@ -1,7 +1,8 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.views.decorators.csrf import csrf_protect 
 from .models import Post, Tag
 
 # Function based views for static html pages
@@ -37,6 +38,7 @@ def rockets(request):
 def ground(request):
     return render(request, 'yktaero/projects/ground-equipment.html')
 
+@csrf_protect
 def feedback(request):
     next = request.POST.get('next', '/')
     return HttpResponseRedirect(next)

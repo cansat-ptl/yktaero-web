@@ -57,6 +57,7 @@
 			<div class="contact-content-flex">
 				<div class="contact-content">
 					<form action="/feedback?" method="POST">
+						<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
 						<input type="text" id="fname" name="firstname" placeholder="E-mail">
 						<input type="text" id="fname" name="firstname" placeholder="Имя">
 						<input type="hidden" name="next" value="{{ request.path }}">
