@@ -102,4 +102,7 @@
 	.item-card {
 		padding: 16px;
 	}
+	.tabset > label {
+		width: 100%;
+	}
 }
