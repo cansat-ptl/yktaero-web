@@ -32,7 +32,7 @@ urlpatterns = [
     path('projects/<slug:slug>',
         ProjectView.as_view(),
         name='project-view'),
-    path('projects/<slug:slug>/<slug:pslug>',
+    path('projects/item/<slug:slug>',
         ProjectView.as_view(),
         name='project-item'),
     path('news',

@@ -28,7 +28,7 @@
 						{{ item.preview_text|escape|linebreaks|safe }}
 					</div>
 					<div class="card-bottomlinks">
-						<a href="{{ url('project-item', kwargs={'slug': project.name, 'pslug': item.slug}) }}" class="button">Подробнее</a>
+						<a href="{{ url('project-item', kwargs={'slug': item.slug}) }}" class="button">Подробнее</a>
 						<a href="{{ item.preview_docs }}" class="button-nobg">Техническая документация</a>
 					</div>
 				</div>
