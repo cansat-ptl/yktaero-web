@@ -66,15 +66,16 @@ class NewsView(ListView):
 
     paginate_by = 10
     template_name = 'yktaero/news.html'
-    model = Post
+    model = Post,Tag
     allow_empty = True
     queryset = Post.objects.published()
     ordering = None
     context_object_name = 'posts'
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = super(NewsView, self).get_context_data(**kwargs)
         self.queryset = Post.objects.published()
+        context['alltags'] = Tag.objects.all()
         return context
 
 
