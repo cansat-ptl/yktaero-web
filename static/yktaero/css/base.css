@@ -443,7 +443,7 @@ a {
 /* ================================================ *
  *                   Input styles                   * 
  * ================================================ */
- input[type=text], select, textarea {
+ input[type=text], input[type=email], select, textarea {
 	padding: 16px;
 	border-radius: 2px;
 	border: none;
@@ -526,6 +526,80 @@ input[type=submit]:hover {
 a.disabled {
 	pointer-events: none;
 	cursor: default;
+}
+
+
+/* ================================================ *
+ *                  Modal Windows                   * 
+ * ================================================ */
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.3);
+	border-radius: 3px;
+}
+
+.modal-content {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 75%;
+	max-width: 800px;
+}
+
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.modal-header {
+	padding: 2px 16px;
+	background-color: var(--color-blue-1);
+	color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+	padding: 2px 16px;
+	background-color: var(--color-blue-1);;
+	color: white;
+}
+
+.modal-content {
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 0;
+	border: 1px solid #888;
+	width: 80%;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	animation-name: animatetop;
+	animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+	from {top: -300px; opacity: 0}
+	to {top: 0; opacity: 1}
 }
 
 /* ================================================ *
@@ -630,6 +704,10 @@ a.disabled {
 		display: none;
 	}
 }
+
+/* ================================================ *
+ *                     Clearfix                     * 
+ * ================================================ */
 
 .clearfix {
 	overflow: auto;

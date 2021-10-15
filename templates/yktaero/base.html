@@ -50,7 +50,31 @@
 				</div>
 			</div>
 		</div>
-		{% block content %}{% endblock %}
+		{% if get_messages(request) %}
+			{% for msg in get_messages(request) %}
+			{% endfor %}
+			<div id="modal_feedback" class="modal" style="display: block;">
+				<div class="modal-content" style="margin-top: 10vh;">
+					<div class="modal-header">
+						<span class="close" id="modal_feedback_close">&times;</span>
+						<h2 style="margin: 4px;">Спасибо!</h2>
+					</div>
+					<div class="modal-body">
+						<p>Ваша заявка принята. Ожидайте ответа на указанную почту в течение 3-5 рабочих дней.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var modal = document.getElementById("modal_feedback");
+			var modal_close = document.getElementById("modal_feedback_close");
+
+			modal_close.onclick = function() {
+				modal.style.display = "none";
+			}
+		</script>
+		{% endif %}
+		{% block content %}{% endblock %}		
 		<div class="contact">
 			<h1>Обратная связь</h1>
 			<p>Оставьте заявку, и наши специалисты с вами свяжутся</p>
@@ -58,10 +82,10 @@
 				<div class="contact-content">
 					<form action="/feedback?" method="POST">
 						<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
-						<input type="text" id="fname" name="firstname" placeholder="E-mail">
-						<input type="text" id="fname" name="firstname" placeholder="Имя">
+						<input type="email" id="femail" name="firstname" placeholder="E-mail" required>
+						<input type="text" id="fname" name="firstname" placeholder="Имя" required>
 						<input type="hidden" name="next" value="{{ request.path }}">
-						<textarea id="subject" name="subject" placeholder="Ваше сообщение" style="height:200px"></textarea>
+						<textarea id="subject" name="subject" placeholder="Ваше сообщение" style="height:200px" required></textarea>
 						<input type="submit" value="Оставить заявку">
 					</form>
 				</div>

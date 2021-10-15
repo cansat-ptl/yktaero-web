@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.decorators.csrf import csrf_protect 
+from django.contrib import messages
 from .models import Post, Tag, Project, Item
 
 # Function based views for static html pages
@@ -41,6 +42,7 @@ def ground(request):
 @csrf_protect
 def feedback(request):
     next = request.POST.get('next', '/')
+    messages.success(request, "Your data has been saved!")
     return HttpResponseRedirect(next)
 
 # Class-based views for django-distill blog
