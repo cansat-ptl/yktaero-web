@@ -1,3 +1,4 @@
+from django.db.models.fields import SlugField
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.views.generic.list import ListView
@@ -93,10 +94,20 @@ class ItemView(DetailView):
 
 class TagView(DetailView):
 
+    paginate_by = 10
     template_name = 'yktaero/tag.html'
     model = Tag
-    slug_url_kwarg = 'tag'
+    allow_empty = True
+    ordering = None
     slug_field = 'name'
+    slug_url_kwarg = 'tag'
+    context_object_name = 'tag'
+
+    def get_context_data(self, **kwargs):
+        context = super(TagView, self).get_context_data(**kwargs)
+        self.queryset = self.model.post_set
+        context['alltags'] = Tag.objects.all()
+        return context
 
 
 class ProjectView(DetailView):
