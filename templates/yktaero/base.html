@@ -42,10 +42,10 @@
 						<i class="icons-arrow icons-arrow-down"></i>
 					</button>
 					<div class="dropdown-content" id="projects-dropdown">
-						<a href="/projects/yktsat">Образовательная платформа "YKTSAT"</a>
-						<a href="/projects/payloads">Полезные нагрузки для МКА</a>
-						<a href="/projects/ground-equipment">Наземные комплексы</a>
-						<a href="/projects/sounding-rockets">Любительские ракеты-носители</a>
+						<a href="{{ url('project-view', kwargs={'slug': 'yktsat'}) }}">Образовательная платформа "YKTSAT"</a>
+						<a href="{{ url('project-view', kwargs={'slug': 'payloads'}) }}">Полезные нагрузки для МКА</a>
+						<a href="{{ url('project-view', kwargs={'slug': 'ground-equipment'}) }}">Наземные комплексы</a>
+						<a href="{{ url('project-view', kwargs={'slug': 'sounding-rockets'}) }}">Любительские ракеты-носители</a>
 					</div>
 				</div>
 			</div>

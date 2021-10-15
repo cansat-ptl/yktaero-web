@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.decorators.csrf import csrf_protect 
-from .models import Post, Tag
+from .models import Post, Tag, Project, Item
 
 # Function based views for static html pages
 
@@ -56,7 +56,7 @@ class IndexView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        IndexView.queryset = Post.objects.published()[:3]
+        self.queryset = Post.objects.published()[:3]
         return context
 
 
@@ -72,7 +72,7 @@ class NewsView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        NewsView.queryset = Post.objects.published()
+        self.queryset = Post.objects.published()
         return context
 
 
@@ -88,3 +88,12 @@ class TagView(DetailView):
     model = Tag
     slug_url_kwarg = 'tag'
     slug_field = 'name'
+
+
+class ProjectView(DetailView):
+
+    template_name = 'yktaero/project.html'
+    model = Project
+    allow_empty = True
+    slug_field = 'name'
+

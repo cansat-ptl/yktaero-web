@@ -1,7 +1,15 @@
 from django.templatetags.static import static
 from django.urls import reverse
+from jinja2 import Environment, evalcontextfilter, Markup, escape
+import re
 
-from jinja2 import Environment
+    
+@evalcontextfilter
+def linebreaks(eval_ctx, value):
+    """Converts newlines into <p> and <br />s."""
+    value = re.sub(r'\r\n|\r|\n', '\n', value) # normalize newlines
+    paras = value.replace('\n', '<br />')
+    return Markup(paras)
 
 
 def environment(**options):
@@ -10,4 +18,5 @@ def environment(**options):
         'static': static,
         'url': reverse,
     })
+    env.filters['linebreaks'] = linebreaks
     return env

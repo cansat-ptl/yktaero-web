@@ -12,6 +12,7 @@
 </div>
 <div class="container">
 	<div class="align-center"> 
+		<h1>{{ post.title }}</h1>
 		<div class="news-post-info"> 
 			<div class="news-post-date">Опубликовано: {{ post.updated }}</div>
 			<div>
@@ -21,10 +22,7 @@
 				{% endfor %}
 			</div>
 		</div>
-		<h1>{{ post.title }}</h1>
-		<p>
-			{{ post.content|safe }}
-		</p>
+		{{ post.content|safe }}
 		{% if post.preview_image|length %}
 			<img src="{{ static(post.preview_image) }}" style="width: 100%; border-radius: 5px;" />
 		{% else %}

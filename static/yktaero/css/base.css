@@ -630,3 +630,13 @@ a.disabled {
 		display: none;
 	}
 }
+
+.clearfix {
+	overflow: auto;
+}
+
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+  }
