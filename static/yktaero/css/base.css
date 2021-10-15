@@ -693,6 +693,10 @@ a.disabled {
 		flex-direction: column;
 	}
 
+	.container-flex {
+		padding: 0;
+	}
+
 	.card {
 		margin: 12px 0px;
 		width: 100%;

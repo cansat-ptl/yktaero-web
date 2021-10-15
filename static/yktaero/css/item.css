@@ -99,4 +99,7 @@
 	.item-flex-description {
 		width: 100%;
 	}
+	.item-card {
+		padding: 16px;
+	}
 }
