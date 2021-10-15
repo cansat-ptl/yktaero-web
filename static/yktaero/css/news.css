@@ -25,15 +25,12 @@
 	margin-right: auto;
 }
 
-.tags .button {
-	background-color: var(--color-black-1);
-}
-
 .news-flex-content {
 	width: 75%;
 }
 .news-tag {
 	margin: 4px;
+	background-color: var(--color-black-1);
 }
 .news-flex-content .button-nobg {
 	padding: 0px 1em;
