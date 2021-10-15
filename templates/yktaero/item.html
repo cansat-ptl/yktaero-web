@@ -7,7 +7,7 @@
 		<ul class="breadcrumb">
 			<li><a href="/">Главная</a></li>
 			<li><a href="{% if request.META.HTTP_REFERER %}{{request.META.HTTP_REFERER}} {% endif %}">Проекты</a></li>
-			<li><a href="{{ url('project-item', kwargs={'slug': item.slug}) }}">{{ item.title }}</a></li>
+			<li>{{ item.title }}</li>
 		</ul>
 	</div>
 </div>
