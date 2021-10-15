@@ -20,6 +20,10 @@
 	margin: 12px 0px;
 }
 
+.news-card-post {
+	padding: 12px 20px;
+}
+
 .centered {
 	margin-left: auto;
 	margin-right: auto;
