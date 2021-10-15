@@ -85,6 +85,12 @@ class PostView(DetailView):
     model = Post
 
 
+class ItemView(DetailView):
+
+    template_name = 'yktaero/item.html'
+    model = Item
+
+
 class TagView(DetailView):
 
     template_name = 'yktaero/tag.html'

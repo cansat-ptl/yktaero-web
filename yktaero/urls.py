@@ -18,7 +18,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
-from .views import IndexView, PostView, TagView, NewsView, ProjectView
+from .views import IndexView, PostView, TagView, NewsView, ProjectView, ItemView
 from .models import Post, Tag, Item, Project
 
 urlpatterns = [
@@ -33,7 +33,7 @@ urlpatterns = [
         ProjectView.as_view(),
         name='project-view'),
     path('projects/item/<slug:slug>',
-        ProjectView.as_view(),
+        ItemView.as_view(),
         name='project-item'),
     path('news',
         NewsView.as_view(),
