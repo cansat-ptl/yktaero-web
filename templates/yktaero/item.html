@@ -1,4 +1,4 @@
-{% extends "yktaero/base.html" %} {% block title %}Новости{% endblock %} {% block content %}
+{% extends "yktaero/base.html" %} {% block title %}{{ item.title }}{% endblock %} {% block content %}
 <link rel="stylesheet" href="{{ static('yktaero/css/item.css') }}" />
 <link rel="stylesheet" href="{{ static('yktaero/./css/projectcards.css') }}" />
 <div class="header-sm header-background-image">
@@ -6,7 +6,7 @@
 		<h1>{{ item.title }}</h1>
 		<ul class="breadcrumb">
 			<li><a href="/">Главная</a></li>
-			<li><a href="">Проекты</a></li>
+			<li><a href="{{request.META.HTTP_REFERER}}">Проекты</a></li>
 			<li><a href="{{ url('project-item', kwargs={'slug': item.slug}) }}">{{ item.title }}</a></li>
 		</ul>
 	</div>
