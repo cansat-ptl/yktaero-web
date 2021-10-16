@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<link rel="shortcut icon" href="{{ static('yktaero/favicon.ico') }}">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{{ static('yktaero/css/normalize.css') }}" />
+		<link rel="stylesheet" href="{{ static('yktaero/css/sanitize.css') }}" />
+		<link rel="stylesheet" href="{{ static('yktaero/css/base.css') }}" />
+		<link rel="stylesheet" href="{{ static('yktaero/css/icons.css') }}" />
+		<title>{% block title %}{% endblock %} - Якутские Аэрокосмические Системы</title>
+		<style>
+			.header-background-image {
+				background-image: url("{{ static('yktaero/img/bkg.jpg') }}");
+			}
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript" src="{{ static('yktaero/src/base.js') }}"></script>
+		<div class="navbar">
+			<div class="align-center">
+				<button class="navbar-logo-btn" onclick="location.href='/'">
+					<img src="{{ static('yktaero/img/logo-opt.svg') }}" class="navbar-logo-img" />
+				</button>
+				<a href="https://docs.yktaero.space">Документация</a>
+				<a href="/news">Новости</a>
+				<div class="dropdown">
+					<button class="dropdown-btn" onclick="menu_showDropdown(this, 'about-dropdown')">
+						О нас
+						<i class="icons-arrow icons-arrow-down"></i>
+					</button>
+					<div class="dropdown-content" id="about-dropdown">
+						<a href="/about/staff">Сотрудники</a>
+						<a href="/about/partners">Партнеры</a>
+						<a href="/about/contacts">Контакты</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropdown-btn" onclick="menu_showDropdown(this, 'projects-dropdown')">
+						Проекты
+						<i class="icons-arrow icons-arrow-down"></i>
+					</button>
+					<div class="dropdown-content" id="projects-dropdown">
+						<a href="{{ url('project-view', kwargs={'slug': 'yktsat'}) }}">Образовательная платформа "YKTSAT"</a>
+						<a href="{{ url('project-view', kwargs={'slug': 'payloads'}) }}">Полезные нагрузки для МКА</a>
+						<a href="{{ url('project-view', kwargs={'slug': 'ground-equipment'}) }}">Наземные комплексы</a>
+						<a href="{{ url('project-view', kwargs={'slug': 'sounding-rockets'}) }}">Любительские ракеты-носители</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% if get_messages(request) %}
+			<div id="modal_feedback" class="modal" style="display: block;">
+				<div class="modal-content" style="margin-top: 10vh;">
+					<div class="modal-header">
+						<span class="close" id="modal_feedback_close">&times;</span>
+						<h2 style="margin: 4px;">Обратная связь</h2>
+					</div>
+					<div class="modal-body">
+					{% for msg in get_messages(request) %}
+						<p>{{msg}}</p>
+					{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var modal = document.getElementById("modal_feedback");
+			var modal_close = document.getElementById("modal_feedback_close");
+
+			modal_close.onclick = function() {
+				modal.style.display = "none";
+			}
+		</script>
+		{% endif %}
+		{% block content %}{% endblock %}		
+		<div class="contact">
+			<h1>Обратная связь</h1>
+			<p>Оставьте заявку, и наши специалисты с вами свяжутся</p>
+			<div class="contact-content-flex">
+				<div class="contact-content">
+					<form action="/feedback" method="POST">
+						<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+						<input type="email" id="femail" name="email" placeholder="E-mail" required>
+						<input type="text" id="fname" name="firstname" placeholder="Имя" required>
+						<input type="hidden" name="next" value="{{ request.path }}">
+						<textarea id="subject" name="subject" placeholder="Ваше сообщение" style="height:200px" required></textarea>
+						<input type="submit" value="Оставить заявку">
+					</form>
+				</div>
+				<div class="contact-content">
+					<div class="contact-map-flex">
+						<div class="contact-icons-flex">
+							<img src="{{ static('yktaero/img/address.svg') }}" />
+							<img src="{{ static('yktaero/img/tel.svg') }}" />
+							<img src="{{ static('yktaero/img/email.svg') }}" />
+						</div>
+						<img src="{{ static('yktaero/img/map.png') }}" class="contact-map-img"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer-content-flex">
+				<div class="footer-content">
+					<h2>ООО «Якутские Аэрокосмические Системы»</h2>
+					<p>Copyright © 2021</p>
+					<p>При поддержке ГАУ РС(Я) «Технопарк Якутия» и Фонда содействия инновациям</p>
+					<a href="#">Условия использования</a>
+				</div>
+				<div class="footer-content">
+					<h2>Контакты</h2>
+					<p>Общество с ограниченной ответственностью «Якутские Аэрокосмические Системы»</p>
+					<p>ИНН/КПП: 1435358869/143501001, ОГРН: 1211400002516, ОКПО 47532632</p>
+					<p>677000, Россия, Республика Саха (Якутия), г. Якутск, ул. Дзержинского, 76, блок С, офис 203</p>
+					<p>+7 (914) 228-06-39, contact@yktaero.space</p>
+				</div>
+				<div class="footer-content">
+					<h2>Ресурсы для разработчиков:</h2>
+					<a href="https://git.yktaero.space">GitLab</a>
+					<h2>Социальные сети:</h2>
+					<p>Тут пока ничего нет</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

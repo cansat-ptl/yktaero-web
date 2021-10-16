@@ -1,9 +1,4 @@
 {
-    "python.linting.pylintArgs": [
-        "--load-plugins",
-        "pylint_flask_sqlalchemy",
-        "pylint_flask"
-    ],
     "editor.insertSpaces": false,
     "prettier.printWidth": 120,
     "prettier.useTabs": true,

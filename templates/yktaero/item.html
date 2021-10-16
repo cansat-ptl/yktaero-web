@@ -1,0 +1,71 @@
+{% extends "yktaero/base.html" %} {% block title %}{{ item.title }}{% endblock %} {% block content %}
+<link rel="stylesheet" href="{{ static('yktaero/css/item.css') }}" />
+<link rel="stylesheet" href="{{ static('yktaero/./css/projectcards.css') }}" />
+<div class="header-sm header-background-image">
+	<div class="align-center header-background-text">
+		<h1>{{ item.title }}</h1>
+		<ul class="breadcrumb">
+			<li><a href="/">Главная</a></li>
+			<li><a href="{% if request.META.HTTP_REFERER %}{{request.META.HTTP_REFERER}} {% endif %}">Проекты</a></li>
+			<li>{{ item.title }}</li>
+		</ul>
+	</div>
+</div>
+<div class="container">
+	<br>
+	<div class="container-flex flex-row">
+		<div class="item-flex-image">
+			{% if item.preview_image|length %}
+				<img src="{{ static(item.preview_image) }}" class="card-image" />
+			{% else %}
+				<img src="{{ item.preview_image_external }}" class="card-image" />
+			{% endif %}
+		</div>
+		<div class="item-flex-description">
+			<div class="item-card">
+				<div class="card-content">
+					<div class="card-header">{{ item.title }}</div>
+					<div class="card-subtitle">{{ item.sku }}</div>
+					<div class="card-text">
+						{{ item.preview_text|escape|linebreaks|safe }}
+					</div>
+				</div>
+				<br>
+				<div class="tabset">
+					<!-- Tab 1 -->
+					<input type="radio" name="tabset" id="tab1" aria-controls="description" checked>
+					<label for="tab1">Описание</label>
+					<!-- Tab 2 -->
+					<input type="radio" name="tabset" id="tab2" aria-controls="specifications">
+					<label for="tab2">Характеристики</label>
+					<!-- Tab 3 -->
+					<input type="radio" name="tabset" id="tab3" aria-controls="datasheets">
+					<label for="tab3">Документация</label>
+					<!-- Tab 4 -->
+					<input type="radio" name="tabset" id="tab4" aria-controls="info">
+					<label for="tab4">Доп. информация</label>
+					
+					<div class="tab-panels">
+						<section id="description" class="tab-panel">
+							<h2>Описание</h2>
+							{{ item.description|safe }}
+						</section>
+						<section id="specifications" class="tab-panel">
+							<h2>Характеристики</h2>
+							{{ item.specifications|safe }}
+						</section>
+						<section id="datasheets" class="tab-panel">
+							<h2>Документация</h2>
+							{{ item.docs|safe }}
+						</section>
+						<section id="info" class="tab-panel">
+							<h2>Дополнительная информация</h2>
+							{{ item.info|safe }}
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

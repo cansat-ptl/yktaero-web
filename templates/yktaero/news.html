@@ -1,0 +1,77 @@
+{% extends "yktaero/base.html" %} {% block title %}Новости{% endblock %} 
+{% block content %}
+<link rel="stylesheet" href="{{ static('yktaero/./css/projectcards.css') }}" />
+<link rel="stylesheet" href="{{ static('yktaero/./css/news.css') }}" />
+<div class="header-sm header-background-image">
+	<div class="align-center header-background-text">
+		<h1>Новости</h1>
+		<ul class="breadcrumb">
+			<li><a href="/">Главная</a></li>
+			<li>Новости</li>
+		</ul>
+	</div>
+</div>
+<div class="container">
+	<div class="container-flex flex-row"> 
+		<div class="news-flex-tags news-card">
+			<h2 style="text-align: center; margin-top: 0px;">Теги:</h2>
+			<div class="container-flex" style="justify-content: space-evenly;">
+				{% for tag in alltags%}
+					<a class="button news-tag" href="{{ url('blog-tag', kwargs={'tag': tag.name}) }}">{{ tag.name }}</a>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="news-flex-content">
+			{% for post in page_obj %}
+				<div class="project-card">
+					{% if post.preview_image|length %}
+						<img src="{{ static(post.preview_image) }}" class="news-img card-image-odd" />
+					{% else %}
+						<img src="{{ post.preview_image_external }}" class="news-img card-image-odd" />
+					{% endif %}
+					<div class="card-content">
+						<div class="card-header">{{ post.title }}</div>
+						<div class="card-subtitle" style="font-size: inherit;">Опубликовано: <time>{{ post.updated }}</time></div>
+						<div class="card-subtitle" style="font-size: inherit;">Теги:
+							{% for tag in post.tags.all() %}
+								<a class="" href="{{ url('blog-tag', kwargs={'tag': tag.name}) }}">{{ tag.name }}</a>
+							{% endfor %}
+						</div>
+						<div class="card-text">
+							{{ post.preview_text }}
+						</div>
+						<div class="card-bottomlinks">
+							<a href="{{ url('blog-post', kwargs={'slug': post.slug}) }}" class="button">Читать далее</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+			<div style="margin-top: 20px;">
+				{% if page_obj.has_other_pages %}
+					<div class="pagination">
+						{% if page_obj.has_previous == 1 %}
+							<a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+						{% else %}
+							<a class="disabled">&laquo;</a>
+						{% endif %}
+						{% for i in page_obj.paginator.page_range %}
+							{% if page_obj.number == i %}
+								<a class="active">{{ i }}</a>
+							{% else %}
+								{% if page_obj.number <= 10 %}
+									<a href="?page={{ i }}">{{ i }}</a>
+								{% endif %}
+							{% endif %}
+						{% endfor %}
+						{% if page_obj.has_next == 1 %}
+							<a href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+						{% else %}
+							<a class="disabled">&raquo;</a>
+						{% endif %}
+					</div>			
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

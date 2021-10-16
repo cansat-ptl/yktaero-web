@@ -1,0 +1,92 @@
+{% extends "yktaero/base.html" %} {% block title %}Главная{% endblock %} {% block content %}
+<link rel="stylesheet" href="{{ static('yktaero/css/projectcards.css') }}" />
+
+<div class="header header-background-image">
+	<div class="align-center header-background-text">
+		<h1>Космос, созданный в Якутии</h1>
+		<!--<ul class="breadcrumb">
+			<li><a href="#">Раздел 1</a></li>
+			<li><a href="#">Подраздел 1</a></li>
+			<li><a href="#">Подраздел 2</a></li>
+			<li>Главная</li>
+		</ul>-->
+		<p>ООО «Якутские Аэрокосмические Системы» - компания-разработчик малых космических аппаратов</p>
+	</div>
+</div>
+<div class="container">
+	<h1 class="align-center" style="margin-top: 16px">Проекты</h1>
+	<div class="container-flex flex-col">
+		<div class="project-card">
+			<img src="{{ static('yktaero/img/cubesat1.jpg') }}" class="card-image card-image-odd" />
+			<div class="card-content">
+				<div class="card-header">Спутниковая платформа YKTSAT-1U</div>
+				<div class="card-text">
+					Спутниковая платформа YKTSAT - готовый конструктор микроспутников класса CubeSat начального уровня,
+					предназначенный для обучения школьников и студентов ССУЗов основам проектирования космической
+					техники. Конструктор
+					включает в себя полный набор аппаратного и программного обеспечения, необходимого для создания
+					полнофункционального, готового к космическому запуску, спутника.
+				</div>
+				<a href="{{ url('project-view', kwargs={'slug': 'yktsat'}) }}" class="button">Подробнее</a>
+			</div>
+		</div>
+		<div class="project-card">
+			<img src="{{ static('yktaero/img/payload1.jpg') }}" class="card-image card-image-even" />
+			<div class="card-content">
+				<div class="card-header">Полезные нагрузки для МКА</div>
+				<div class="card-text">
+					Полезные нагрузки для МКА - модули, предназначенные для интеграции со спутниковой платформой.
+					Полезная нагрузка обеспечивает выполнение космическим аппаратом практических задач, таких как
+					проведение исследований или тестирование электронных компонентов. Модули от ООО «Якутские
+					Аэрокосмические Системы» совместимы с платформой YKTSAT, а также со стандартом PC/104, что позволяет
+					использовать их с КА других производителей.
+				</div>
+				<a href="{{ url('project-view', kwargs={'slug': 'payloads'}) }}" class="button">Подробнее</a>
+			</div>
+		</div>
+		<div class="project-card">
+			<img src="{{ static('yktaero/img/ground1.jpg') }}" class="card-image card-image-odd" />
+			<div class="card-content">
+				<div class="card-header">Наземное оборудование</div>
+				<div class="card-text">
+					У ООО «Якутские Аэрокосмические Системы» имеется опыт в создании наземных комплексов - антенных
+					станций слежения, стартовых пультов для ракетомоделизма и оборудования для отладки ПО
+					CanSat/CubeSat.
+				</div>
+				<a href="{{ url('project-view', kwargs={'slug': 'ground-equipment'}) }}" class="button">Подробнее</a>
+			</div>
+		</div>
+	</div>
+	<h1 class="align-center" style="margin-top: 16px">Новости</h1>
+	<div class="container-flex flex-row">
+		{% for post in posts %}
+			<div class="card clearfix">
+				{% if post.preview_image|length %}
+					<img src="{{ static(post.preview_image) }}" class="card-image" />
+				{% else %}
+					<img src="{{ post.preview_image_external }}" class="card-image" />
+				{% endif %}
+				<div class="card-header">{{ post.title }}</div>
+				<div class="card-text">{{ post.preview_text }}</div>
+				<a href="{{ url('blog-post', kwargs={'slug': post.slug}) }}" class="button">Читать далее</a>
+			</div>
+		{% endfor %}
+	</div>
+	<div class="spacer news-button" style="text-align: center">
+		<a href="/news" class="button button-large">Все новости</a>
+	</div>
+	<div class="about-org">
+		<div class="project-card">
+			<img src="{{ static('yktaero/img/about.jpg') }}" class="card-image card-image-odd" />
+			<div class="card-content">
+				<div class="card-header">О компании</div>
+				<div class="card-text">
+					ООО «Якутские Аэрокосмические Системы» - компания-разработчик приборов аэрокосмического назначения,
+					резидент ГАУ РС(Я) «Технопарк Якутия».
+				</div>
+				<a href="/contacts" class="button">Подробнее</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}	
