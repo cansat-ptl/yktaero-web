@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.decorators.csrf import csrf_protect 
+from django.views.decorators.csrf import csrf_protect
 from django.contrib import messages
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
@@ -12,6 +12,7 @@ from ratelimit.decorators import ratelimit
 from .models import Post, Tag, Project, Item, Feedback
 
 # Function based views for static html pages
+
 
 def news(request):
     return render(request, 'yktaero/news.html')
@@ -38,7 +39,8 @@ def feedback(request):
         try:
             validate_email(request.POST.get('email', 'invalid'))
         except ValidationError:
-            messages.error(request, "Недопустимый формат электронной почты. Пожалуйста, проверьте правильность введённых данных и попробуйте ещё раз.")
+            messages.error(
+                request, "Недопустимый формат электронной почты. Пожалуйста, проверьте правильность введённых данных и попробуйте ещё раз.")
             return HttpResponseRedirect(next)
 
         name = escape(request.POST.get('firstname', 'invalid'))
@@ -47,10 +49,12 @@ def feedback(request):
         fb = Feedback.objects.create(name=name, email=email, text=subj)
         fb.save()
 
-        messages.success(request, "Спасибо, ваша заявка принята. Ожидайте ответа на почту " + email + " в течение 3-5 рабочих дней.")
+        messages.success(request, "Спасибо, ваша заявка принята. Ожидайте ответа на почту " +
+                         email + " в течение 3-5 рабочих дней.")
         return HttpResponseRedirect(next)
 
 # Class-based views for django-distill blog
+
 
 class IndexView(ListView):
 
@@ -71,7 +75,7 @@ class NewsView(ListView):
 
     paginate_by = 10
     template_name = 'yktaero/news.html'
-    model = Post,Tag
+    model = Post, Tag
     allow_empty = True
     queryset = Post.objects.published()
     ordering = None
@@ -120,4 +124,3 @@ class ProjectView(DetailView):
     model = Project
     allow_empty = True
     slug_field = 'name'
-
