@@ -113,7 +113,7 @@ class TagView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(TagView, self).get_context_data(**kwargs)
-        TagView.queryset = self.model.post_set
+        self.queryset = self.model.post_set
         context['alltags'] = Tag.objects.all()
         return context
 
