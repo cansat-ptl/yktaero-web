@@ -60,4 +60,10 @@ window.onclick = function(event)
                         isDropdownActive = false;
                 }
         }
+
+        if (typeof modal  !== 'undefined') {
+                if (event.target == modal) {
+                        modal.style.display = "none";
+                }
+        }
 } 

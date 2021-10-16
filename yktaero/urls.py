@@ -18,8 +18,8 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
-from .views import IndexView, PostView, TagView, NewsView 
-from .models import Post, Tag
+from .views import IndexView, PostView, TagView, NewsView, ProjectView, ItemView
+from .models import Post, Tag, Item, Project
 
 urlpatterns = [
     path('',
@@ -28,20 +28,20 @@ urlpatterns = [
     path('about/contacts', views.contacts, name='about/contacts'),
     path('about/staff', views.staff, name='about/staff'),
     path('about/partners', views.partners, name='about/partners'),
-    path('projects/payloads', views.payloads, name='projects/payloads'),
-    path('projects/yktsat', views.yktsat, name='projects/yktsat'),
-    path('projects/sounding-rockets', views.rockets,
-         name='projects/sounding-rockets'),
-    path('projects/ground-equipment', views.ground,
-         name='projects/ground-equipment'),
     path('admin/', admin.site.urls),
+    path('projects/<slug:slug>',
+        ProjectView.as_view(),
+        name='project-view'),
+    path('projects/item/<slug:slug>',
+        ItemView.as_view(),
+        name='project-item'),
     path('news',
         NewsView.as_view(),
         name='blog-index'),
     path('post/<slug:slug>',
         PostView.as_view(),
         name='blog-post'),
-    path('tag/<slug:tag>.html',
+    path('tag/<slug:tag>',
         TagView.as_view(),
         name='blog-tag'),
     path('feedback',

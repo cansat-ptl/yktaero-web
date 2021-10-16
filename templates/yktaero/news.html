@@ -7,16 +7,18 @@
 		<h1>Новости</h1>
 		<ul class="breadcrumb">
 			<li><a href="/">Главная</a></li>
-			<li><a href="/news">Новости</a></li>
+			<li>Новости</li>
 		</ul>
 	</div>
 </div>
 <div class="container">
 	<div class="container-flex flex-row"> 
-		<div class="news-flex-tags">
-			<h2 style="text-align: left;">Теги:</h2>
-			<div class="container-flex">
-				
+		<div class="news-flex-tags news-card">
+			<h2 style="text-align: center; margin-top: 0px;">Теги:</h2>
+			<div class="container-flex" style="justify-content: space-evenly;">
+				{% for tag in alltags%}
+					<a class="button news-tag" href="{{ url('blog-tag', kwargs={'tag': tag.name}) }}">{{ tag.name }}</a>
+				{% endfor %}
 			</div>
 		</div>
 		<div class="news-flex-content">

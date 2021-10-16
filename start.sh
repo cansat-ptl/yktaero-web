@@ -4,4 +4,4 @@ echo Activating venv
 source ./venv/bin/activate
 
 echo Starting server
-python3 prod.py
+daphne yktaero.asgi:application -p 5000

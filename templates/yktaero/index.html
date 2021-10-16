@@ -27,7 +27,7 @@
 					включает в себя полный набор аппаратного и программного обеспечения, необходимого для создания
 					полнофункционального, готового к космическому запуску, спутника.
 				</div>
-				<a href="/projects/yktsat" class="button">Подробнее</a>
+				<a href="{{ url('project-view', kwargs={'slug': 'yktsat'}) }}" class="button">Подробнее</a>
 			</div>
 		</div>
 		<div class="project-card">
@@ -41,7 +41,7 @@
 					Аэрокосмические Системы» совместимы с платформой YKTSAT, а также со стандартом PC/104, что позволяет
 					использовать их с КА других производителей.
 				</div>
-				<a href="/projects/payloads" class="button">Подробнее</a>
+				<a href="{{ url('project-view', kwargs={'slug': 'payloads'}) }}" class="button">Подробнее</a>
 			</div>
 		</div>
 		<div class="project-card">
@@ -53,46 +53,23 @@
 					станций слежения, стартовых пультов для ракетомоделизма и оборудования для отладки ПО
 					CanSat/CubeSat.
 				</div>
-				<a href="/projects/ground-equipment" class="button">Подробнее</a>
+				<a href="{{ url('project-view', kwargs={'slug': 'ground-equipment'}) }}" class="button">Подробнее</a>
 			</div>
 		</div>
 	</div>
 	<h1 class="align-center" style="margin-top: 16px">Новости</h1>
 	<div class="container-flex flex-row">
-		<!--
-		<div class="card">
-			<img src="{{ static('yktaero/./img/test.jpg') }}" class="card-image" />
-			<div class="card-header">Сайт работает</div>
-			<div class="card-text">1234</div>
-			<a href="#" class="button">Читать далее</a>
-		</div>
-		<div class="card">
-			<img src="{{ static('yktaero/./img/test.jpg') }}" class="card-image" />
-			<div class="card-header">Резиденство в Технопарке «Якутия»</div>
-			<div class="card-text">С 9 июня 2021 года ООО «Якутские Аэрокосмические Системы» является резидентом ГАУ
-				РС(Я) «Технопарк Якутия»</div>
-			<a href="#" class="button">Читать далее</a>
-		</div>
-		<div class="card">
-			<img src="{{ static('yktaero/./img/test.jpg') }}" class="card-image" />
-			<div class="card-header">Грант УМНИК-2020</div>
-			<div class="card-text">
-				С 25 по 27 мая состоялся полуфинал конкурса «УМНИК-2020» Фонда содействия инновациям.
-			</div>
-			<a href="#" class="button">Читать далее</a>
-		</div>-->
 		{% for post in posts %}
-		
-		<div class="card">
-			{% if post.preview_image|length %}
-				<img src="{{ static(post.preview_image) }}" class="card-image" />
-			{% else %}
-				<img src="{{ post.preview_image_external }}" class="card-image" />
-			{% endif %}
-			<div class="card-header">{{ post.title }}</div>
-			<div class="card-text">{{ post.preview_text }}</div>
-			<a href="{{ url('blog-post', kwargs={'slug': post.slug}) }}" class="button">Читать далее</a>
-		</div>
+			<div class="card clearfix">
+				{% if post.preview_image|length %}
+					<img src="{{ static(post.preview_image) }}" class="card-image" />
+				{% else %}
+					<img src="{{ post.preview_image_external }}" class="card-image" />
+				{% endif %}
+				<div class="card-header">{{ post.title }}</div>
+				<div class="card-text">{{ post.preview_text }}</div>
+				<a href="{{ url('blog-post', kwargs={'slug': post.slug}) }}" class="button">Читать далее</a>
+			</div>
 		{% endfor %}
 	</div>
 	<div class="spacer news-button" style="text-align: center">

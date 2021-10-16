@@ -1,0 +1,39 @@
+{% extends "yktaero/base.html" %} {% block title %}{{ project.title }}{% endblock %} {% block content %}
+<link rel="stylesheet" href="{{ static('yktaero/./css/projectcards.css') }}" />
+<div class="header-sm header-background-image">
+	<div class="align-center header-background-text">
+		<h1>{{ project.title }}</h1>
+		<ul class="breadcrumb">
+			<li><a href="/">Главная</a></li>
+			<li><a href="">Проекты</a></li>
+			<li>{{ project.title }}</li>
+		</ul>
+	</div>
+</div>
+<div class="container">
+	<p class="subh1">{{ project.description|safe }}<hr>
+	<h2>{{ project.title }}:</h2>
+	<div class="container-flex flex-col">
+		{% for item in project.item_set.available() %}
+			<div class="project-card">
+				{% if item.preview_image|length %}
+					<img src="{{ static(item.preview_image) }}" class="card-image card-image-even" />
+				{% else %}
+					<img src="{{ item.preview_image_external }}" class="card-image card-image-even" />
+				{% endif %}
+				<div class="card-content">
+					<div class="card-header">{{ item.title }}</div>
+					<div class="card-subtitle">{{ item.sku }}</div>
+					<div class="card-text">
+						{{ item.preview_text|escape|linebreaks|safe }}
+					</div>
+					<div class="card-bottomlinks">
+						<a href="{{ url('project-item', kwargs={'slug': item.slug}) }}" class="button">Подробнее</a>
+						<a href="{{ item.preview_docs }}" class="button-nobg">Техническая документация</a>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

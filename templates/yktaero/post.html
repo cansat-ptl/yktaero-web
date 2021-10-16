@@ -1,17 +1,18 @@
 {% extends "yktaero/base.html" %} {% block title %}Новости{% endblock %} {% block content %}
-<link rel="stylesheet" href="{{ static('yktaero/./css/news.css') }}" />
+<link rel="stylesheet" href="{{ static('yktaero/css/news.css') }}" />
 <div class="header-sm header-background-image">
 	<div class="align-center header-background-text">
 		<h1>Новости</h1>
 		<ul class="breadcrumb">
 			<li><a href="/">Главная</a></li>
 			<li><a href="/news">Новости</a></li>
-			<li><a href="{{ url('blog-post', kwargs={'slug': post.slug}) }}">{{ post.title }}</a></li>
+			<li>{{ post.title }}</li>
 		</ul>
 	</div>
 </div>
 <div class="container">
-	<div class="align-center"> 
+	<div class="news-card centered news-card-post"> 
+		<h1 style="margin-top: 8px;">{{ post.title }}</h1>
 		<div class="news-post-info"> 
 			<div class="news-post-date">Опубликовано: {{ post.updated }}</div>
 			<div>
@@ -21,10 +22,8 @@
 				{% endfor %}
 			</div>
 		</div>
-		<h1>{{ post.title }}</h1>
-		<p>
-			{{ post.content|safe }}
-		</p>
+		<hr/>
+		{{ post.content|safe }}
 		{% if post.preview_image|length %}
 			<img src="{{ static(post.preview_image) }}" style="width: 100%; border-radius: 5px;" />
 		{% else %}
