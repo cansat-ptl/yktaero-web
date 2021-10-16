@@ -67,7 +67,7 @@ class IndexView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        self.queryset = Post.objects.published()[:3]
+        IndexView.queryset = Post.objects.published()[:3]
         return context
 
 
@@ -83,7 +83,7 @@ class NewsView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(NewsView, self).get_context_data(**kwargs)
-        self.queryset = Post.objects.published()
+        NewsView.queryset = Post.objects.published()
         context['alltags'] = Tag.objects.all()
         return context
 
@@ -113,7 +113,7 @@ class TagView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(TagView, self).get_context_data(**kwargs)
-        self.queryset = self.model.post_set
+        TagView.queryset = self.model.post_set
         context['alltags'] = Tag.objects.all()
         return context
 
