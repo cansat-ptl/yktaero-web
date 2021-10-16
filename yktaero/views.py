@@ -5,7 +5,11 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.decorators.csrf import csrf_protect 
 from django.contrib import messages
-from .models import Post, Tag, Project, Item
+from django.core.exceptions import ValidationError
+from django.core.validators import validate_email
+from django.utils.html import escape
+from ratelimit.decorators import ratelimit
+from .models import Post, Tag, Project, Item, Feedback
 
 # Function based views for static html pages
 
@@ -25,26 +29,26 @@ def partners(request):
     return render(request, 'yktaero/about/partners.html')
 
 
-def payloads(request):
-    return render(request, 'yktaero/projects/payloads.html')
-
-
-def yktsat(request):
-    return render(request, 'yktaero/projects/yktsat.html')
-
-
-def rockets(request):
-    return render(request, 'yktaero/projects/sounding-rockets.html')
-
-
-def ground(request):
-    return render(request, 'yktaero/projects/ground-equipment.html')
-
+@ratelimit(key='ip', rate='10/m', block=True)
 @csrf_protect
 def feedback(request):
-    next = request.POST.get('next', '/')
-    messages.success(request, "Your data has been saved!")
-    return HttpResponseRedirect(next)
+    if request.method == 'POST':
+        next = request.POST.get('next', '/')
+        email = request.POST.get('email', 'invalid')
+        try:
+            validate_email(request.POST.get('email', 'invalid'))
+        except ValidationError:
+            messages.error(request, "Недопустимый формат электронной почты. Пожалуйста, проверьте правильность введённых данных и попробуйте ещё раз.")
+            return HttpResponseRedirect(next)
+
+        name = escape(request.POST.get('firstname', 'invalid'))
+        subj = escape(request.POST.get('subject', 'invalid')[:3000])
+
+        fb = Feedback.objects.create(name=name, email=email, text=subj)
+        fb.save()
+
+        messages.success(request, "Спасибо, ваша заявка принята. Ожидайте ответа на почту " + email + " в течение 3-5 рабочих дней.")
+        return HttpResponseRedirect(next)
 
 # Class-based views for django-distill blog
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Tag, Post, Project, Item
+from .models import Tag, Post, Project, Item, Feedback
 
 
 @admin.register(Tag)
@@ -20,3 +20,9 @@ class ProjectAdmin(admin.ModelAdmin):
 @admin.register(Item)
 class ItemAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("sku",)}
+
+
+@admin.register(Feedback)
+class ItemAdmin(admin.ModelAdmin):
+    readonly_fields = ('created',)
+

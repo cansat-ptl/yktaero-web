@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models import Q
 from django.utils import timezone
+from django.utils.html import conditional_escape
 
 
 class PostManager(models.Manager):
@@ -164,11 +165,22 @@ class Feedback(models.Model):
         max_length=255,
         help_text='User name'
     )
+    code = models.CharField(
+        max_length=255,
+		blank=True,
+        help_text='Internal code'
+	)
+    created = models.DateTimeField(
+        auto_now_add=True,
+        help_text='Date feedback was submitted'
+    )
     email = models.CharField(
         max_length=255,
         help_text='User email'
     )
-    text = models.CharField(
-        max_length=3000,
+    text = models.TextField(
         help_text='Feedback text'
     )
+
+    def __str__(self):
+        return 'Feedback from ' + self.email

@@ -51,16 +51,16 @@
 			</div>
 		</div>
 		{% if get_messages(request) %}
-			{% for msg in get_messages(request) %}
-			{% endfor %}
 			<div id="modal_feedback" class="modal" style="display: block;">
 				<div class="modal-content" style="margin-top: 10vh;">
 					<div class="modal-header">
 						<span class="close" id="modal_feedback_close">&times;</span>
-						<h2 style="margin: 4px;">Спасибо!</h2>
+						<h2 style="margin: 4px;">Обратная связь</h2>
 					</div>
 					<div class="modal-body">
-						<p>Ваша заявка принята. Ожидайте ответа на указанную почту в течение 3-5 рабочих дней.</p>
+					{% for msg in get_messages(request) %}
+						<p>{{msg}}</p>
+					{% endfor %}
 					</div>
 				</div>
 			</div>
@@ -80,9 +80,9 @@
 			<p>Оставьте заявку, и наши специалисты с вами свяжутся</p>
 			<div class="contact-content-flex">
 				<div class="contact-content">
-					<form action="/feedback?" method="POST">
+					<form action="/feedback" method="POST">
 						<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
-						<input type="email" id="femail" name="firstname" placeholder="E-mail" required>
+						<input type="email" id="femail" name="email" placeholder="E-mail" required>
 						<input type="text" id="fname" name="firstname" placeholder="Имя" required>
 						<input type="hidden" name="next" value="{{ request.path }}">
 						<textarea id="subject" name="subject" placeholder="Ваше сообщение" style="height:200px" required></textarea>
