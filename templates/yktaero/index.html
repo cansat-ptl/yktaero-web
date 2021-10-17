@@ -67,7 +67,7 @@
 					<img style="background-image: url('{{ post.preview_image_external }}');" class="card-image card-image-fixed" />
 				{% endif %}
 				<div class="card-header"><a href="{{ url('blog-post', kwargs={'slug': post.slug}) }}">{{ post.title }}</a></div>
-				<div class="card-subtext">Опубликовано: {{ post.created|format_date }}</div>
+				<div class="card-pubdate">Опубликовано: {{ post.created|format_date }}</div>
 			</div>
 		{% endfor %}
 	</div>
