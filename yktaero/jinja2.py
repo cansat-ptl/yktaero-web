@@ -13,10 +13,13 @@ def linebreaks(eval_ctx, value):
     paras = value.replace('\n', '<br />')
     return Markup(paras)
 
+@evalcontextfilter
+def format_date(eval_ctx, value):
+    return (value.strftime("%d.%m.%Y"))
 
 @evalcontextfilter
 def format_datetime(eval_ctx, value):
-    return (value.strftime("%d.%m.%Y"))
+    return (value.strftime("%d.%m.%Y %H:%M:%S"))
 
 
 def environment(**options):
@@ -27,5 +30,6 @@ def environment(**options):
         'get_messages': messages.get_messages,
     })
     env.filters['linebreaks'] = linebreaks
+    env.filters['format_date'] = format_date
     env.filters['format_datetime'] = format_datetime
     return env
