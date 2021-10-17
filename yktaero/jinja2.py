@@ -2,6 +2,7 @@ from django.templatetags.static import static
 from django.urls import reverse
 from django.contrib import messages
 from jinja2 import Environment, evalcontextfilter, Markup, escape
+import datetime
 import re
 
     
@@ -13,6 +14,11 @@ def linebreaks(eval_ctx, value):
     return Markup(paras)
 
 
+@evalcontextfilter
+def format_datetime(eval_ctx, value):
+    return (value.strftime("%d.%m.%Y"))
+
+
 def environment(**options):
     env = Environment(**options)
     env.globals.update({
@@ -21,4 +27,5 @@ def environment(**options):
         'get_messages': messages.get_messages,
     })
     env.filters['linebreaks'] = linebreaks
+    env.filters['format_datetime'] = format_datetime
     return env

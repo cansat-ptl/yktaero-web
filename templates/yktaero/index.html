@@ -60,15 +60,14 @@
 	<h1 class="align-center" style="margin-top: 16px">Новости</h1>
 	<div class="container-flex flex-row">
 		{% for post in posts %}
-			<div class="card clearfix">
+			<div class="card">
 				{% if post.preview_image|length %}
-					<img src="{{ static(post.preview_image) }}" class="card-image" />
+					<div style="background-image: url('{{ static(post.preview_image) }}');" class="card-image card-image-fixed"></div>
 				{% else %}
-					<img src="{{ post.preview_image_external }}" class="card-image" />
+					<img style="background-image: url('{{ post.preview_image_external }}');" class="card-image card-image-fixed" />
 				{% endif %}
-				<div class="card-header">{{ post.title }}</div>
-				<div class="card-text">{{ post.preview_text }}</div>
-				<a href="{{ url('blog-post', kwargs={'slug': post.slug}) }}" class="button">Читать далее</a>
+				<div class="card-header"><a href="{{ url('blog-post', kwargs={'slug': post.slug}) }}">{{ post.title }}</a></div>
+				<div class="card-subtext">Опубликовано: {{ post.created|format_datetime }}</div>
 			</div>
 		{% endfor %}
 	</div>
