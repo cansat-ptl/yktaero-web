@@ -506,8 +506,8 @@ input[type=submit]:hover {
 	text-align: center;
 }
 
-.card-subtext {
-	margin: 8px 0px;
+.card-pubdate {
+	margin: 8px 0px -4px 0px;
 	color: var(--color-gray-2);
 	padding: 0px 16px;
 	text-align: center;
