@@ -61,7 +61,7 @@
 
 	min-height: 200px;
 
-	margin: 0px 12px;
+	margin: 0px 0px 0px 12px;
 }
 
 .item-card .card-header {
@@ -91,6 +91,7 @@
 @media screen and (max-width: 980px) {
 	.item-card {
 		align-items: center;
+		margin: 0px 12px;
 	}
 	.item-flex-image {
 		width: 100%;

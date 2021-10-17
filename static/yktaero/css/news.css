@@ -100,7 +100,7 @@
 
 	min-height: 200px;
 
-	margin: 0px 12px;
+	margin: 0px 0px 0px 12px;
 }
 
 .post-card .card-header {
@@ -130,6 +130,7 @@
 @media screen and (max-width: 980px) {
 	.post-card {
 		align-items: center;
+		margin: 0px 12px;
 	}
 	.post-flex-image {
 		width: 100%;
