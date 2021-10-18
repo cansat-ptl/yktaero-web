@@ -30,7 +30,7 @@
 						<img src="{{ post.preview_image_external }}" class="news-img card-image-odd" />
 					{% endif %}
 					<div class="card-content">
-						<div class="card-header">{{ post.title }}</div>
+						<div class="card-header"><a href="{{ url('blog-post', kwargs={'slug': post.slug}) }}">{{ post.title }}</a></div>
 						<div class="card-subtitle" style="font-size: inherit;">
 							<div> 
 								<div class="news-post-date">Опубликовано: {{ post.updated|format_datetime }}</div>
@@ -44,9 +44,6 @@
 						</div>
 						<div class="card-text">
 							{{ post.preview_text }}
-						</div>
-						<div class="card-bottomlinks">
-							<a href="{{ url('blog-post', kwargs={'slug': post.slug}) }}" class="button">Читать далее</a>
 						</div>
 					</div>
 				</div>
