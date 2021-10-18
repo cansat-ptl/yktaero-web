@@ -10,6 +10,7 @@
 	--color-gray-2: #9b9b9b;
 	--color-gray-3: #f5f5f5;
 	--color-gray-4: #a8a8a8;
+	--color-gray-5: #e6e6e6;
 	--navbar-btn-margin: 44px;
 }
 
@@ -629,6 +630,42 @@ a.disabled {
 }
 
 /* ================================================ *
+ *                      Tables                      * 
+ * ================================================ */
+
+ .table-container {
+	 overflow-x: auto;
+ }
+ 
+ .formatted-table {
+	border-collapse: collapse;
+  	width: 100%;
+	min-width: 400px;
+}
+
+.formatted-table td {
+	border: 1px solid var(--color-gray-3);
+  	padding: 8px;
+}
+
+.formatted-table th {
+	border: 1px solid var(--color-gray-3);
+  	padding: 8px;
+}
+
+.formatted-table tr:nth-child(even) {
+	background-color: var(--color-gray-5);
+}
+
+.formatted-table th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: var(--color-blue-1);
+	color: white;
+}
+
+/* ================================================ *
  *                  Responsiveness                  * 
  * ================================================ */
 /* Some dark magic I found on w3schools, idk how this shit works */
@@ -747,4 +784,4 @@ a.disabled {
 	content: "";
 	clear: both;
 	display: table;
-  }
+}
