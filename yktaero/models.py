@@ -8,7 +8,7 @@ class PostManager(models.Manager):
 
     def published(self):
         now = timezone.now()
-        return self.filter(Q(publish_date__lte=now) | Q(publish_date=None))
+        return self.filter(Q(publish_date__lte=now) | Q(publish_date=None)).order_by("-publish_date")
 
 
 class ItemManager(models.Manager):
