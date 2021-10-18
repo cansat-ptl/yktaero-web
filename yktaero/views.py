@@ -10,6 +10,7 @@ from django.core.validators import validate_email
 from django.utils.html import escape
 from ratelimit.decorators import ratelimit
 from .models import Post, Tag, Project, Item, Feedback
+import datetime
 
 # Function based views for static html pages
 
@@ -35,7 +36,7 @@ def partners(request):
 def feedback(request):
     if request.method == 'POST':
         next = request.POST.get('next', '/')
-        email = request.POST.get('email', 'invalid')
+        email = escape(request.POST.get('email', 'invalid'))
         try:
             validate_email(request.POST.get('email', 'invalid'))
         except ValidationError:
@@ -46,7 +47,11 @@ def feedback(request):
         name = escape(request.POST.get('firstname', 'invalid'))
         subj = escape(request.POST.get('subject', 'invalid')[:3000])
 
-        fb = Feedback.objects.create(name=name, email=email, text=subj)
+        dt = datetime.datetime.today()
+
+        int_code = str(dt.year % 100).zfill(2) + "-" + str(dt.month).zfill(2) + "/" + str(int(Feedback.objects.latest('id').id) + 1)
+
+        fb = Feedback.objects.create(name=name, email=email, text=subj, code=int_code)
         fb.save()
 
         messages.success(request, "Спасибо, ваша заявка принята. Ожидайте ответа на почту " +
