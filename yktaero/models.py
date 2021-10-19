@@ -2,6 +2,8 @@ from django.db import models
 from django.db.models import Q
 from django.utils import timezone
 from django.utils.html import conditional_escape
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class PostManager(models.Manager):
@@ -78,18 +80,24 @@ class Post(models.Model):
         null=True,
         blank=True,
     )
-    preview_image = models.TextField(
-        help_text='URL of the preview image',
+    preview_upload = models.ImageField(
+        help_text='Preview image',
         blank=True,
     )
-    preview_image_external = models.TextField(
+    preview_image = models.CharField(
+        max_length=255,
+        help_text='URL of the preview image (internal)',
+        blank=True,
+    )
+    preview_image_external = models.CharField(
+        max_length=255,
         help_text='URL of the preview image (external sites)',
         blank=True,
     )
     preview_text = models.TextField(
         help_text='Short preview text',
     )
-    content = models.TextField(
+    content = RichTextUploadingField(
         help_text='Content of the post'
     )
     tags = models.ManyToManyField(

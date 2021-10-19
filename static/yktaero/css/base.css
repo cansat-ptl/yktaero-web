@@ -702,6 +702,10 @@ a.disabled {
 		width: 100%;
 	}
 
+	.container {
+		width: 90%;
+	}
+
 	.dropdown {
 		margin: 0;
 		width: 100%;

@@ -24,10 +24,14 @@
 		<div class="news-flex-content">
 			{% for post in page_obj %}
 				<div class="project-card">
-					{% if post.preview_image|length %}
-						<img src="{{ static(post.preview_image) }}" class="news-img card-image-odd" />
+					{% if post.preview_upload %}
+						<img src="{{ post.preview_upload.url }}" class="news-img card-image-odd" />
 					{% else %}
-						<img src="{{ post.preview_image_external }}" class="news-img card-image-odd" />
+						{% if post.preview_image|length %}
+							<img src="{{ static(post.preview_image) }}" class="news-img card-image-odd" />
+						{% else %}
+							<img src="{{ post.preview_image_external }}" class="news-img card-image-odd" />
+						{% endif %}
 					{% endif %}
 					<div class="card-content">
 						<div class="card-header"><a href="{{ url('blog-post', kwargs={'slug': post.slug}) }}">{{ post.title }}</a></div>
