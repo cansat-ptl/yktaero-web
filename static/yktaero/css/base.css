@@ -640,7 +640,6 @@ a.disabled {
  .formatted-table {
 	border-collapse: collapse;
   	width: 100%;
-	min-width: 400px;
 }
 
 .formatted-table td {
