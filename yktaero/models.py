@@ -144,17 +144,17 @@ class Item(models.Model):
 		blank=True,
         help_text='Preview datasheet link',
     )
-    description = models.TextField(
+    description = RichTextUploadingField(
         help_text='Long item description'
     )
-    specifications = models.TextField(
+    specifications = RichTextUploadingField(
         help_text='Technical specifications (specifications tab)'
     )
-    docs = models.TextField(
+    docs = RichTextUploadingField(
         blank=True,
         help_text='Links to datasheets and stuff (docs tab)'
     )
-    info = models.TextField(
+    info = RichTextUploadingField(
         blank=True,
         help_text='Additional information about item (info tab)'
     )
