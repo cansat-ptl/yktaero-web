@@ -49,8 +49,11 @@ def feedback(request):
 
         dt = datetime.datetime.today()
 
-        int_code = str(dt.year % 100).zfill(2) + "-" + str(dt.month).zfill(2) + "/" + str(int(Feedback.objects.latest('id').id) + 1)
-
+        try:
+            int_code = str(dt.year % 100).zfill(2) + "-" + str(dt.month).zfill(2) + "/" + str(int(Feedback.objects.latest('id').id) + 1)
+        except  Feedback.DoesNotExist:
+            int_code = ""
+            
         fb = Feedback.objects.create(name=name, email=email, text=subj, code=int_code)
         fb.save()
 
