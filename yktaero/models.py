@@ -129,6 +129,10 @@ class Item(models.Model):
         null=True,
         blank=True,
     )
+    preview_upload = models.ImageField(
+        help_text='Preview image',
+        blank=True,
+    )
     preview_image = models.TextField(
         help_text='URL of the preview image',
         blank=True,
