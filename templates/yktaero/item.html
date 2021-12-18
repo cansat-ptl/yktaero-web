@@ -15,10 +15,14 @@
 	<br>
 	<div class="container-flex flex-row">
 		<div class="item-flex-image">
-			{% if item.preview_image|length %}
-				<img src="{{ static(item.preview_image) }}" class="card-image" />
+			{% if item.preview_upload %}
+				<img src="{{ item.preview_upload.url }}" class="card-image" />
 			{% else %}
-				<img src="{{ item.preview_image_external }}" class="card-image" />
+				{% if item.preview_image|length %}
+					<img src="{{ static(item.preview_image) }}" class="card-image" />
+				{% else %}
+					<img src="{{ item.preview_image_external }}" class="card-image" />
+				{% endif %}
 			{% endif %}
 		</div>
 		<div class="item-flex-description">

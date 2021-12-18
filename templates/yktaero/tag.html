@@ -25,18 +25,29 @@
 		<div class="news-flex-content">
 			{% for post in tag.post_set.all()[:50] %}
 				<div class="project-card">
-					{% if post.preview_image|length %}
-						<img src="{{ static(post.preview_image) }}" class="news-img card-image-odd" />
+					{% if post.preview_upload %}
+						<img src="{{ post.preview_upload.url }}" class="news-img card-image-odd" />
 					{% else %}
-						<img src="{{ post.preview_image_external }}" class="news-img card-image-odd" />
+						{% if post.preview_image|length %}
+							<img src="{{ static(post.preview_image) }}" class="news-img card-image-odd" />
+						{% else %}
+							<img src="{{ post.preview_image_external }}" class="news-img card-image-odd" />
+						{% endif %}
 					{% endif %}
 					<div class="card-content">
-						<div class="card-header">{{ post.title }}</div>
-						<div class="card-subtitle" style="font-size: inherit;">Опубликовано: <time>{{ post.updated }}</time></div>
-						<div class="card-subtitle" style="font-size: inherit;">Теги:
-							{% for tag in post.tags.all() %}
-								<a class="" href="{{ url('blog-tag', kwargs={'tag': tag.name}) }}">{{ tag.name }}</a>
-							{% endfor %}
+						<div class="card-header"><a href="{{ url('blog-post', kwargs={'slug': post.slug}) }}">{{ post.title }}</a></div>
+						<div> 
+							{% if not post.publish_date %}
+								<div class="news-post-date">Опубликовано: {{ post.updated|format_datetime }}</div>
+							{% else %}
+								<div class="news-post-date">Опубликовано: {{ post.publish_date|format_datetime }}</div>
+							{% endif %}
+							<div>
+								<span class="news-post-date">Теги:</span>
+								{% for tag in post.tags.all() %}
+									<a href="{{ url('blog-tag', kwargs={'tag': tag.name}) }}">{{ tag.name }}</a>
+								{% endfor %}
+							</div>
 						</div>
 						<div class="card-text">
 							{{ post.preview_text }}

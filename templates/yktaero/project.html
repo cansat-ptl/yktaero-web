@@ -16,10 +16,14 @@
 	<div class="container-flex flex-col">
 		{% for item in project.item_set.available() %}
 			<div class="project-card">
-				{% if item.preview_image|length %}
-					<img src="{{ static(item.preview_image) }}" class="card-image card-image-even" />
+				{% if item.preview_upload %}
+					<img src="{{ item.preview_upload.url }}" class="card-image card-image-even" />
 				{% else %}
-					<img src="{{ item.preview_image_external }}" class="card-image card-image-even" />
+					{% if item.preview_image|length %}
+						<img src="{{ static(item.preview_image) }}" class="card-image card-image-even" />
+					{% else %}
+						<img src="{{ item.preview_image_external }}" class="card-image card-image-even" />
+					{% endif %}
 				{% endif %}
 				<div class="card-content">
 					<div class="card-header">{{ item.title }}</div>
