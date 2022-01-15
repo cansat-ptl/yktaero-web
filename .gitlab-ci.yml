@@ -5,6 +5,9 @@ deploying:
   stage: deploy
   only:
       - deploy
+  tags:
+      - deploy
+      - production
   
   script:
     - git reset --hard
