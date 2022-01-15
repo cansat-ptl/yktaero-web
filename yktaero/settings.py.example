@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--tj)v6gujy$x02(97!&pi$$eqg2@kl-q5$nrdq9+8zh!%%c14w'
+SECRET_KEY = 'example'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_distill',
-    'yktaero',
     'ckeditor',
     'ckeditor_uploader',
+    'yktaero'
 ]
 
 MIDDLEWARE = [
@@ -88,9 +88,9 @@ WSGI_APPLICATION = 'yktaero.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'yktaero',
-        'USER': 'yktaero',
-        'PASSWORD': 'p9n8wy45vt8o7bt45w3v',
+        'NAME': 'example',
+        'USER': 'example',
+        'PASSWORD': 'example',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -139,15 +139,18 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-MEDIA_URL = '/media/'
+STATIC_ROOT = "/path/to/static"
 
-MEDIA_ROOT = BASE_DIR / 'media/' # 'data' is my media folder
-
-CKEDITOR_UPLOAD_PATH = "uploads/"
-
-CKEDITOR_ALLOW_NONIMAGE_FILES = False
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = '/path/to/media'
+
+CKEDITOR_UPLOAD_PATH = "/path/to/upload"
+
+CKEDITOR_ALLOW_NONIMAGE_FILES = False
