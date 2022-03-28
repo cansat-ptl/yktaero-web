@@ -205,14 +205,12 @@ h2 {
 
 .contact-content-flex {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-between;
 	margin-right: auto;
 	margin-left: auto;
 	width: 75%;
 	max-width: 1280px;
 	-ms-flex-pack: justify;
-	-ms-flex-wrap: wrap;
 }
 
 .contact-content {
@@ -263,6 +261,11 @@ h2 {
 	align-items: flex-start;
 	justify-content: space-between;
 }
+
+.contact-icons-flex img {
+	padding: 0px 5px;
+}
+
 /* ================================================ *
  *                   Navbar styles                  * 
  * ================================================ */
@@ -668,6 +671,19 @@ a.disabled {
  *                  Responsiveness                  * 
  * ================================================ */
 /* Some dark magic I found on w3schools, idk how this shit works */
+@media screen and (max-width: 1500px) {
+	.contact-map-flex {
+		display: none;
+	}
+
+	.contact-content {
+		flex: 100%;
+	}
+
+	.contact-content-flex {
+		flex-wrap: wrap;
+	}
+}
 @media screen and (max-width: 1100px) {
 	:root {
 		--navbar-btn-margin: 28px;
@@ -702,7 +718,7 @@ a.disabled {
 	}
 
 	.container {
-		width: 90%;
+		width: 80%;
 	}
 
 	.dropdown {
@@ -770,8 +786,12 @@ a.disabled {
 		max-width: 100%;
 	}
 
-	.contact {
-		display: none;
+	.contact-content-flex {
+		width: 100%;
+	}
+
+	.footer-content-flex {
+		width: 100%;
 	}
 }
 
