@@ -786,6 +786,14 @@ a.disabled {
 		max-width: 100%;
 	}
 
+	.project-card .card-bottomlinks {
+		flex-wrap: wrap;
+	}
+
+	.card-bottomlinks a {
+		width: 100%;
+	}
+
 	.contact-content-flex {
 		width: 100%;
 	}
