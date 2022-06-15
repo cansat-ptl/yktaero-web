@@ -1,8 +1,11 @@
 .news-img {
 	width: 30%;
-	height: 300%;
+	height: 200px;
 	min-width: 100px;
 	border-radius: 5px;
+	background-position-x: 50%;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 .news-flex-tags {
 	width: 23%;
