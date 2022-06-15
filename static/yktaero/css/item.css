@@ -91,17 +91,27 @@
 @media screen and (max-width: 980px) {
 	.item-card {
 		align-items: center;
-		margin: 0px 12px;
+		margin: 0px 0px;
 	}
 	.item-flex-image {
 		width: 100%;
-		padding: 12px;
+		padding: 12px 0px;
+	}
+	.item-card .card-header {
+		padding: 12px 5px 0px 5px;
+	}
+	.item-card .card-text {
+		padding: 12px 5px 0px 5px;
+	}
+	.item-card .card-subtitle {
+		padding: 0px 5px;
+		font-size: 16px;
 	}
 	.item-flex-description {
 		width: 100%;
 	}
 	.item-card {
-		padding: 16px;
+		padding: 15px;
 	}
 	.tabset > label {
 		width: 100%;

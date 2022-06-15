@@ -718,7 +718,7 @@ a.disabled {
 	}
 
 	.container {
-		width: 80%;
+		width: 85%;
 	}
 
 	.dropdown {
@@ -781,9 +781,18 @@ a.disabled {
 	}
 
 	.card {
-		margin: 12px 0px;
-		width: 100%;
-		max-width: 100%;
+		padding: 0px 0px 5px;
+	}
+
+	.card-header {
+		line-height: 24px;
+		font-size: 20px;
+	}	
+	
+	.card-text {
+		margin: 8px 0px;
+		padding: 0px 5px;
+		text-align: center;
 	}
 
 	.project-card .card-bottomlinks {
