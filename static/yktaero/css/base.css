@@ -781,7 +781,9 @@ a.disabled {
 	}
 
 	.card {
-		padding: 0px 0px 5px;
+		margin: 12px 0px;
+		width: 100%;
+		max-width: 100%;
 	}
 
 	.card-header {
