@@ -6,6 +6,7 @@
 	background-position-x: 50%;
 	background-size: contain;
 	background-repeat: no-repeat;
+	object-fit: cover;
 }
 .news-flex-tags {
 	width: 23%;
