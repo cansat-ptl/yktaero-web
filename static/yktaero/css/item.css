@@ -55,8 +55,8 @@
 
 .item-card {
 	padding: 12px 24px 24px 24px;
-	border-radius: 5px;
-	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	border-radius: 2px;
+	border: 1px solid lightgray;
 	background: #f8f8f8;
 
 	min-height: 200px;
@@ -85,7 +85,8 @@
 }
 
 .item-flex-image .card-image {
-	border-radius: 5px;
+	border-radius: 2px;
+	border: 1px solid lightgray;
 }
 
 @media screen and (max-width: 980px) {
