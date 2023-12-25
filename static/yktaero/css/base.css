@@ -645,16 +645,17 @@ a.disabled {
  
  .formatted-table {
 	border-collapse: collapse;
+	border: 1px solid lightgray;
   	width: 100%;
 }
 
 .formatted-table td {
-	border: 1px solid var(--color-gray-3);
+	border: 1px solid lightgray;
   	padding: 8px;
 }
 
 .formatted-table th {
-	border: 1px solid var(--color-gray-3);
+	border: 1px solid lightgray;
   	padding: 8px;
 }
 
