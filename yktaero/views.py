@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.views.generic.base import TemplateView
 from django.views.decorators.csrf import csrf_protect
 from django.contrib import messages
 from django.core.exceptions import ValidationError
@@ -107,6 +108,8 @@ class ItemView(DetailView):
     template_name = 'yktaero/item.html'
     model = Item
 
+class SakhaCubeView(TemplateView):
+    template_name = 'yktaero/sakhacube.html'
 
 class TagView(DetailView):
 
@@ -132,3 +135,4 @@ class ProjectView(DetailView):
     model = Project
     allow_empty = True
     slug_field = 'name'
+
