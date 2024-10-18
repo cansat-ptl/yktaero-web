@@ -1,3 +1,98 @@
-{% extends "yktaero/base.html" %} {% block title %}Главная{% endblock %} {% block content %}
-<h1>Тут пока ничего нет</h1>
+{% extends "yktaero/base.html" %} {% block title %}Партнеры{% endblock %} {% block content %}
+<style>
+	.card-avatar {
+		padding: 16px;
+	}
+	.card-avatar img {; 
+		width: 100%;
+		height: 200px;
+		object-fit: contain;
+	}
+</style>
+<div class="header-sm header-background-image">
+	<div class="align-center header-background-text">
+		<h1>Партнеры</h1>
+		<ul class="breadcrumb">
+			<li><a href="/">Главная</a></li>
+			<li><a href="">О нас</a></li>
+			<li>Партнеры</li>
+		</ul>
+	</div>
+</div>
+
+<div class="container">
+	<h1>Партнеры:</h1>
+	<div class="container-flex flex-row">
+		<div class="card">
+			<div class="card-avatar">
+				<img src="{{ static('yktaero/./img/partners/tpykt.png') }}"/>
+			</div>
+			<div class="card-header">ГАУ «Технопарк Якутия»</div>
+			<div class="card-text">
+				Резидентство с 2021 года
+				<br><br>
+				<b>Веб-сайт:</b> <a href="https://tpykt.ru">https://tpykt.ru</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-avatar">
+				<img src="{{ static('yktaero/./img/partners/fasie.png') }}"/>
+			</div>
+			<div class="card-header">Фонд содействия инновациям</div>
+			<div class="card-text">
+				Грантовая поддержка
+				<br><br>
+				<b>Веб-сайт:</b> <a href="https://fasie.ru">https://fasie.ru</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-avatar">
+				<img src="{{ static('yktaero/./img/partners/sjsa.png') }}"/>
+			</div>
+			<div class="card-header">ГАНОУ РЦ РС(Я) «Малая Академия Наук РС(Я)»</div>
+			<div class="card-text">
+				Научно-образовательное сотрудничество
+				<br>
+				<b>Веб-сайт:</b> <a href="https://lensky-kray.ru">https://lensky-kray.ru</a>
+			</div>
+		</div>
+	</div>
+	<h1>Сотрудничаем с:</h1>
+	<div class="container-flex flex-row">
+		<div class="card">
+			<div class="card-avatar">
+				<img src="{{ static('yktaero/./img/partners/sx.png') }}"/>
+			</div>
+			<div class="card-header">ООО «СПУТНИКС»</div>
+			<div class="card-text">
+				Разработка полезных нагрузок, управление космическими аппаратами
+				<br>
+				<b>Веб-сайт:</b> <a href="https://sputnix.ru">https://sputnix.ru</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-avatar">
+				<img src="{{ static('yktaero/./img/partners/sibsau.png') }}"/>
+			</div>
+			<div class="card-header">СибГУ им. М.Ф. Решетнева</div>
+			<div class="card-text">
+				Сопровождение миссий, образовательные проекты, космическая связь
+				<br>
+				<b>Веб-сайт:</b> <a href="https://sibsau.ru">https://sibsau.ru</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-avatar">
+				<img src="{{ static('yktaero/./img/partners/strato.png') }}"/>
+			</div>
+			<div class="card-header">ООО «СТРАТОНАВТИКА»</div>
+			<div class="card-text">
+				Математическое моделирование, радиосвязь, разработка ПО, образование
+				<br>
+				<b>Веб-сайт:</b> <a href="https://stratonautica.ru">https://stratonautica.ru</a>
+			</div>
+		</div>
+	</div>
+</div>
+
 {% endblock %}
