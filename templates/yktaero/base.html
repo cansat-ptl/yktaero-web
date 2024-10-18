@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="{{ static('yktaero/css/sanitize.css') }}" />
 		<link rel="stylesheet" href="{{ static('yktaero/css/base.css') }}" />
 		<link rel="stylesheet" href="{{ static('yktaero/css/icons.css') }}" />
-		<title>{% block title %}{% endblock %} - ЯКС</title>
+		<title>{% block title %}{% endblock %} — ЯКС</title>
 		<style>
 			.header-background-image {
 				background-image: url("{{ static('yktaero/img/bkg.jpg') }}");
@@ -45,7 +45,7 @@
 						<i class="icons-arrow icons-arrow-down"></i>
 					</button>
 					<div class="dropdown-content" id="projects-dropdown">
-						<a href="{{ url('project-view', kwargs={'slug': 'yktsat'}) }}">Образовательная платформа "YKTSAT"</a>
+						<a href="/projects/sakhacube-cholbon">МКА «Якутия-Чолбон»</a>
 						<a href="{{ url('project-view', kwargs={'slug': 'payloads'}) }}">Полезные нагрузки для МКА</a>
 						<a href="{{ url('project-view', kwargs={'slug': 'ground-equipment'}) }}">Наземные комплексы</a>
 						<a href="{{ url('project-view', kwargs={'slug': 'rovers'}) }}">Управляемые роверы</a>

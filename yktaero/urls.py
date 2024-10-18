@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
-from .views import IndexView, PostView, TagView, NewsView, ProjectView, ItemView
+from .views import IndexView, PostView, TagView, NewsView, ProjectView, ItemView, SakhaCubeView
 from .models import Post, Tag, Item, Project
 
 urlpatterns = [
@@ -29,6 +29,9 @@ urlpatterns = [
     path('about/staff', views.staff, name='about/staff'),
     path('about/partners', views.partners, name='about/partners'),
     path('admin/', admin.site.urls),
+	path('projects/sakhacube-cholbon',
+        SakhaCubeView.as_view(),
+        name='sakhacube'),
     path('projects/<slug:slug>',
         ProjectView.as_view(),
         name='project-view'),
